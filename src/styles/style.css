@@ -35,27 +35,49 @@ div.article {
 .articleItems {
   padding-left: 2.5em;
 }
-div.item2 {
-  display: inline;
-}
-div.item2>div.statement {
-  display: inline;
-}
+
 
 .item1>ol.subItems {
   list-style-type: none;
 }
 .item1>ol.subItems>li{
-  counter-increment: cnt;
+  counter-increment: parenNum;
 }
 .item1>ol.subItems>li:before{
-  content: "(" counter(cnt) ")";
+  content: "(" counter(parenNum) ")";
 }
+div.item2 {
+  display: inline;
+  padding-left: 0.3em;
+}
+div.item2>div.statement {
+  display: inline;
+}
+
 
 .item2>ol.subItems {
   padding-left: 3.5em;
   list-style-type: katakana;
 }
+
+
+.item3>ol.subItems {
+  list-style-type: none;
+}
+.item3>ol.subItems>li{
+  counter-increment: parenKatakana;
+}
+.item3>ol.subItems>li:before{
+  content: "(" counter(parenKatakana, katakana) ")";
+}
+div.item4 {
+  display: inline;
+  padding-left: 0.3em;
+}
+div.item4>div.statement {
+  display: inline;
+}
+
 
 ol.timestamps {
   list-style-type: none;
