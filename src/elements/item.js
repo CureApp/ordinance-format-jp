@@ -4,7 +4,7 @@ import Element from './element'
 import type { PlainElement } from './element'
 
 export type PlainItem = {
-    statement: string,
+    statement?: string,
 } & PlainElement
 
 /**

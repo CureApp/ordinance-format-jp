@@ -7,8 +7,8 @@ import type { PlainArticle } from './article'
 import type DocumentStructure from '../meta/document-structure'
 
 export type PlainDocument = {
-  title: string,
-  description: string,
+  title?: string,
+  description?: string,
   articles?: Array<PlainArticle>,
   timestamps?: Array<string>,
 }
@@ -33,13 +33,13 @@ export default class Document {
   timestamps: Array<string>
 
   constructor(plain: PlainDocument) {
-    this.title = plain.title
-    this.description = plain.description
+    this.title = plain.title || ''
+    this.description = plain.description || ''
     this.articles = plain.articles ? plain.articles.map(pa => new Article(pa)) : []
     this.timestamps = plain.timestamps || []
   }
 
-  toHtml(docStructure: DocumentStructure, options: HtmlOptions): string {
-    return `${this.title}です`
+  toHtml(ds: DocumentStructure, options: HtmlOptions): string {
+    return this.articles.map(article => article.toHtml(ds)).join('¥n')
   }
 }

@@ -9,7 +9,6 @@ export function format(markdownText: string, options: HtmlOptions) {
 
 export default class OrdinanceFormatJp {
   document: Document
-  docStructure: DocumentStructure
 
   constructor(markdownText: string) {
     const title = markdownText
@@ -17,6 +16,7 @@ export default class OrdinanceFormatJp {
   }
 
   toHtml(options: ?HtmlOptions): string {
-    return this.document.toHtml(this.docStructure, options || {})
+    const ds = new DocumentStructure(this.document)
+    return this.document.toHtml(ds, options || {})
   }
 }

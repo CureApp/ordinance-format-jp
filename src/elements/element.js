@@ -1,11 +1,12 @@
 // @flow
-import type Item, { PlainItem } from './item'
+import Item from './item'
+import type { PlainItem } from './item'
 
 export type PlainElement = {
   id: string,
-  tagName: string,
-  items: Array<PlainItem>,
-  appendix: string,
+  labelName?: string,
+  items?: Array<PlainItem>,
+  appendix?: string,
 }
 
 /**
@@ -14,7 +15,14 @@ export type PlainElement = {
  */
 export default class Element {
   id: string
-  tagName: string
+  labelName: string
   items: Array<Item>
   appendix: string
+
+  constructor(plain: PlainElement) {
+    this.id = plain.id
+    this.labelName = plain.labelName || ''
+    this.items = plain.items ? plain.items.map(pItem => new Item(pItem)) : []
+    this.appendix = plain.appendix || ''
+  }
 }

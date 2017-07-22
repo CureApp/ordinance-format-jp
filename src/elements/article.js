@@ -2,9 +2,10 @@
 
 import Element from './element'
 import type { PlainElement } from './element'
+import type DocumentStructure from '../meta/document-structure'
 
 export type PlainArticle = {
-  title: string
+  title?: string
 } & PlainElement
 
 /**
@@ -15,6 +16,10 @@ export default class Article extends Element {
 
   constructor(plain: PlainArticle) {
     super(plain)
-    this.title = plain.title
+    this.title = plain.title || ''
+  }
+
+  toHtml(ds: DocumentStructure): string {
+    return this.title
   }
 }
