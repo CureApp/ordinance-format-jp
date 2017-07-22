@@ -44,6 +44,10 @@ export default class DocumentStructure {
   depthsById: { [id: string]: number }
 
   constructor(doc: Document) {
+    this.elementsById = {}
+    this.elementsByLabel = {}
+    this.positionsById = {}
+    this.depthsById = {}
     doc.articles.forEach((article, i) => appendElements(this, article, [i + 1], 0))
   }
 

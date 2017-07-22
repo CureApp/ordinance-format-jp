@@ -49,15 +49,15 @@ export default class Document {
     )
 
     const description = tag(
-      'h1',
+      'div',
       this.description,
       { class: 'documentDescription' },
     )
 
-    const articles = this.articles.map(article => article.toHtml(ds)).join('¥n')
+    const articles = this.articles.map(article => article.toHtml(ds)).join('\n')
     const footer = this.renderTimestamps()
 
-    const html = [h1, description, articles, footer].join('¥n')
+    const html = [h1, description, articles, footer].join('\n')
     return this.resolveLabels(html, ds)
   }
 
@@ -66,7 +66,7 @@ export default class Document {
       'li',
       ts,
       { class: 'timestamp' }
-    )).join('¥n')
+    )).join('\n')
 
     return tag(
       'ol',

@@ -37,7 +37,7 @@ export default class Article extends Element {
 
     return tag(
       'div',
-      [h2, itemsHtml, appendix].join('¥n'),
+      [h2, itemsHtml, appendix].join('\n'),
       { class: 'article' },
       true // no escape
     )
@@ -64,7 +64,7 @@ export default class Article extends Element {
       item.toHtml(ds),
       { class: 'articleItem' },
       true // no escape
-    )).join('¥n')
+    )).join('\n')
 
     return tag(
       'ol',

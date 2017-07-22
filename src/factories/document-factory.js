@@ -15,66 +15,73 @@ export default class DocumentFactory {
     const tokens = new marked.Lexer().lex(markdownText)
 
     const doc = new Document()
-    let id = 0
-    let currentElement: Article = new Article({ id })
-    let prevDepth: number
-    let currentDepth: number
-    let items = []
+    let id = 1
+    let currentArticle: ?Article
+    let itemStack: Array<Item> = []
 
     tokens.forEach(token => {
-      prevDepth = currentDepth || 0
-      currentDepth = token.depth
-
-      // depthが減ったときはdocumentのarticlesに追加
-      if (prevDepth > 1 && prevDepth > currentDepth) {
-        currentElement.items.push(currentElement)
-      }
-
-      // depthが増えたときはdocumentのarticlesに追加
-      if (prevDepth < currentDepth) {
-        doc.articles.push(currentElement)
-        id = id + 1
-        currentElement = new Article({ id })
-      }
+      const currentItem = itemStack[itemStack.length - 1]
 
       switch(token.type) {
         case 'heading': {
-          if (currentDepth === 1) {
+          if (token.depth === 1) {
             doc.title = token.text
             break
           }
-          currentElement.title = token.text
+          // depth が 2以上のときはarticleとみなす
+          const { labelName, text } = this.getLabelFromText(token.text)
+          const article = new Article({ id: (++id).toString(), title: text, labelName })
+          doc.articles.push(article)
+          currentArticle = article
+          itemStack = []
           break
         }
         case 'paragraph': {
-          if (currentElement.items.length === 0) {
+          // 第1条に達していないとき、descriptionと判断
+          if (currentArticle == null) {
             doc.description = token.text
             break
           }
-          currentElement.items.push(token.text)
+
+          const { labelName, text } = this.getLabelFromText(token.text)
+          const paragraphItem = new Item({ id: (++id).toString(), statement: text, labelName })
+          // $FlowIssue(he-is-not-null)
+          currentArticle.items.push(paragraphItem)
+          itemStack = [paragraphItem]
           break
         }
         case 'list_item_start': {
-          id = id + 1
-          items.push(new Item({ id }))
+          const listItem = new Item({ id: (++id).toString() })
+          currentItem.items.push(listItem)
+          itemStack.push(listItem)
           break
         }
         case 'list_item_end': {
-          currentElement.items = items.slice()
+          itemStack.pop()
           break
         }
+
         case 'text': {
-          items[items.length - 1].statment = token.text
+          const { labelName, text } = this.getLabelFromText(token.text)
+          currentItem.statement = text
+          currentItem.labelName = labelName
           break
         }
         case 'code': {
-          doc.timestamps.push(token.text)
+          doc.timestamps = token.text.split('¥n')
           break
         }
       }
-      // console.log(token)
     })
 
     return doc
+  }
+
+  getLabelFromText(text: string): { labelName: string, text: string } {
+    let matched
+    if (matched = text.match(/^`([^`]+)`/)) {
+      return { labelName: matched[1], text: text.slice(matched[1].length + 2) }
+    }
+    return { labelName: '', text }
   }
 }

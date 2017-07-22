@@ -36,7 +36,7 @@ export default class Item extends Element {
 
     return tag(
       'div',
-      [statement, itemsHtml, appendix].join('¥n'),
+      [statement, itemsHtml, appendix].join('\n'),
       { class: `item${num}` },
       true // no escape
     )
@@ -53,7 +53,7 @@ export default class Item extends Element {
       item.toHtml(ds),
       { class: 'subItem' },
       true // no escape
-    )).join('¥n')
+    )).join('\n')
 
     return tag(
       'ol',
