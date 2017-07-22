@@ -4,11 +4,12 @@ ol {
 }
 
 div.ordinance {
-  max-width: 1024px;
-  line-height: 1.2em;
+  max-width: 1200px;
+  line-height: 1.5em;
   font-size: 14px;
   font-family: sans-serif;
   margin: 40px auto;
+  color: #333337;
 }
 
 h1.documentTitle {
@@ -54,4 +55,9 @@ div.item2>div.statement {
 .item2>ol.subItems {
   padding-left: 3.5em;
   list-style-type: katakana;
+}
+
+ol.timestamps {
+  list-style-type: none;
+  margin-top: 3em;
 }

@@ -12,7 +12,8 @@ module.exports = {
     __dirname: true,
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         enforce: 'pre',
         use: ['remove-flow-types-loader'],
@@ -20,7 +21,12 @@ module.exports = {
           path.join(__dirname, 'src'),
           path.join(__dirname, 'test/spec'),
         ]
-    }]
+      },
+      {
+        test: /\.css$/,
+        use: 'raw-loader'
+      }
+    ]
   },
   plugins: [
     new CircularDependencyPlugin({

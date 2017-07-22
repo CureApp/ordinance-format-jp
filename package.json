@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "circular-dependency-plugin": "^3.0.0",
+    "raw-loader": "^0.5.1",
     "remove-flow-types-loader": "^1.0.0",
     "webpack": "^3.3.0"
   }

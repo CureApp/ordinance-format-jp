@@ -2,6 +2,7 @@
 import Element from './element'
 import Article from './article'
 import tag from '../utils/tag'
+import style from '../styles/style.css'
 
 import type { PlainElement } from './element'
 import type { PlainArticle } from './article'
@@ -15,7 +16,7 @@ export type PlainDocument = {
 }
 
 export type HtmlOptions = {
-  withStyle?: boolean, // styleタグも出力するかどうか
+  standalone?: boolean, // 単体でHTMLとして完結させるか
   elementId?: string, // トップレベル要素のid デフォルトは 'ordinance'
 }
 
@@ -59,12 +60,19 @@ export default class Document {
     const articles = this.articles.map(article => article.toHtml(ds)).join('\n')
     const footer = this.renderTimestamps()
 
-    const html = tag(
+    const htmlWithoutLabelLinks = tag(
       'div',
       [h1, description, articles, footer].join('\n'),
       { id: elementId, class: 'ordinance' }
     )
-    return this.resolveLabels(html, ds)
+
+    const html = this.resolveLabels(htmlWithoutLabelLinks, ds)
+
+    if (!options.standalone) {
+      return html
+    }
+    // $FlowIssue(css-is-string)
+    return `<html><head><style>\n${style}</style><body>\n${html}</body></html>`
   }
 
   renderTimestamps(): string {
