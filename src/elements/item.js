@@ -37,8 +37,7 @@ export default class Item extends Element {
     return tag(
       'div',
       [statement, itemsHtml, appendix].join('\n'),
-      { class: `item${depth}` },
-      true // no escape
+      { class: `item${depth}` }
     )
   }
 
@@ -51,15 +50,13 @@ export default class Item extends Element {
     const inner = this.items.map(item => tag(
       'li',
       item.toHtml(ds),
-      { class: 'subItem' },
-      true // no escape
+      { class: 'subItem' }
     )).join('\n')
 
     return tag(
       'ol',
       inner,
-      { class: 'subItems' },
-      true
+      { class: 'subItems' }
     )
   }
 

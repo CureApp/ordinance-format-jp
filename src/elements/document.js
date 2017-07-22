@@ -71,8 +71,7 @@ export default class Document {
     return tag(
       'ol',
       inner,
-      { class: 'timestamps' },
-      true
+      { class: 'timestamps' }
     )
   }
 

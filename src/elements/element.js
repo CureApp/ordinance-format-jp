@@ -33,9 +33,7 @@ export default class Element {
     return tag(
       'div',
       this.appendix,
-      {
-        class: 'appendix'
-      }
+      { class: 'appendix' }
     )
   }
 

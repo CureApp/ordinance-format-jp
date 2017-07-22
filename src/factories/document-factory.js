@@ -6,6 +6,13 @@ import Article from '../elements/article'
 import Element from '../elements/element'
 import Item from '../elements/item'
 
+
+// inlineのみをrenderできるような設定
+// label文法(codespan)だけはスルーするようにも設定
+const inlineRenderer = new marked.Renderer()
+inlineRenderer.paragraph = (v) => v
+inlineRenderer.codespan = (v) => '`' + v + '`'
+
 export default class DocumentFactory {
 
   constructor() {
@@ -29,7 +36,7 @@ export default class DocumentFactory {
             break
           }
           // depth が 2以上のときはarticleとみなす
-          const { labelName, text } = this.getLabelFromText(token.text)
+          const { labelName, text } = this.parseInline(token.text)
           const article = new Article({ id: (++id).toString(), title: text, labelName })
           doc.articles.push(article)
           currentArticle = article
@@ -43,7 +50,7 @@ export default class DocumentFactory {
             break
           }
 
-          const { labelName, text } = this.getLabelFromText(token.text)
+          const { labelName, text } = this.parseInline(token.text)
           const paragraphItem = new Item({ id: (++id).toString(), statement: text, labelName })
           // $FlowIssue(he-is-not-null)
           currentArticle.items.push(paragraphItem)
@@ -62,7 +69,7 @@ export default class DocumentFactory {
         }
 
         case 'text': {
-          const { labelName, text } = this.getLabelFromText(token.text)
+          const { labelName, text } = this.parseInline(token.text)
           currentItem.statement = text
           currentItem.labelName = labelName
           break
@@ -77,11 +84,12 @@ export default class DocumentFactory {
     return doc
   }
 
-  getLabelFromText(text: string): { labelName: string, text: string } {
+  parseInline(text: string): { labelName: string, text: string } {
+    const t = marked(text, { renderer: inlineRenderer })
     let matched
-    if (matched = text.match(/^`([^`]+)`( *)/)) {
-      return { labelName: matched[1], text: text.slice(matched[1].length + matched[2].length + 2) }
+    if (matched = t.match(/^`([^`]+)`( *)/)) {
+      return { labelName: matched[1], text: t.slice(matched[1].length + matched[2].length + 2) }
     }
-    return { labelName: '', text }
+    return { labelName: '', text: t }
   }
 }

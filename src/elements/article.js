@@ -38,8 +38,7 @@ export default class Article extends Element {
     return tag(
       'div',
       [h2, itemsHtml, appendix].join('\n'),
-      { class: 'article' },
-      true // no escape
+      { class: 'article' }
     )
   }
 
@@ -53,8 +52,7 @@ export default class Article extends Element {
       return tag(
         'div',
         this.items[0].toHtml(ds),
-        { class: 'articleItems' },
-        true // no escape
+        { class: 'articleItems' }
       )
     }
 
@@ -62,15 +60,13 @@ export default class Article extends Element {
     const inner = this.items.map(item => tag(
       'li',
       item.toHtml(ds),
-      { class: 'articleItem' },
-      true // no escape
+      { class: 'articleItem' }
     )).join('\n')
 
     return tag(
       'ol',
       inner,
-      { class: 'articleItems' },
-      true
+      { class: 'articleItems' }
     )
   }
 
