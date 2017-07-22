@@ -47,7 +47,7 @@ export default class DocumentFactory {
           break
         }
         case 'paragraph': {
-          if (currentDepth === 1) {
+          if (currentElement.items.length === 0) {
             doc.description = token.text
             break
           }
@@ -57,23 +57,24 @@ export default class DocumentFactory {
         case 'list_item_start': {
           id = id + 1
           items.push(new Item({ id }))
-          currentElement.items.push(new Item({ id }))
+          break
         }
         case 'list_item_end': {
           currentElement.items = items.slice()
+          break
         }
         case 'text': {
           items[items.length - 1].statment = token.text
+          break
         }
         case 'code': {
           doc.timestamps.push(token.text)
           break
         }
       }
-      // console.log(doc)
       // console.log(token)
     })
 
-    return new Document({ title: 'タイトル' })
+    return doc
   }
 }
