@@ -32,11 +32,12 @@ export default class Document {
   articles: Array<Article>
   timestamps: Array<string>
 
-  constructor(plain: PlainDocument) {
-    this.title = plain.title || ''
-    this.description = plain.description || ''
-    this.articles = plain.articles ? plain.articles.map(pa => new Article(pa)) : []
-    this.timestamps = plain.timestamps || []
+  constructor(plain?: PlainDocument) {
+    const p = plain || {}
+    this.title = p.title || ''
+    this.description = p.description || ''
+    this.articles = p.articles ? p.articles.map(pa => new Article(pa)) : []
+    this.timestamps = p.timestamps || []
   }
 
   toHtml(ds: DocumentStructure, options: HtmlOptions): string {
