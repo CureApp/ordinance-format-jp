@@ -1,7 +1,7 @@
 {
-  "name": "ordinance-format-jp",
+  "name": "legal-doc-jp",
   "version": "1.0.0",
-  "description": "",
+  "description": "generate legal doc HTML from markdown text",
   "main": "dist/bundle.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,7 @@
     "webpack": "webpack",
     "test": "webpack test/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"
   },
-  "author": "",
+  "author": ["shinout", "imoans"],
   "license": "ISC",
   "dependencies": {
     "marked": "^0.3.6"
