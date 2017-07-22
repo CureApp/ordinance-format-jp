@@ -10,5 +10,5 @@ const table = {
 }
 
 export default function escapeHtml(html: string): string {
-  return html.replace(/[&'`"<>]/g, match => table[match])
+  return html.replace(/[&'"<>]/g, match => table[match])
 }

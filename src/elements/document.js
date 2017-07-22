@@ -77,6 +77,13 @@ export default class Document {
   }
 
   resolveLabels(html: string, ds: DocumentStructure): string {
-    return html.replace(/`[^`]+/g, label => ds.getElementNameByLabel(label))
+    return html.replace(/`\$?([^`]+)` */g, (x, label) => {
+      try {
+        return ds.getElementNameByLabel(label)
+      }
+      catch (e) {
+        throw new Error(`不明なラベル: ${label}`)
+      }
+    })
   }
 }

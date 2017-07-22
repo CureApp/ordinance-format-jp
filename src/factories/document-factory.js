@@ -79,8 +79,8 @@ export default class DocumentFactory {
 
   getLabelFromText(text: string): { labelName: string, text: string } {
     let matched
-    if (matched = text.match(/^`([^`]+)`/)) {
-      return { labelName: matched[1], text: text.slice(matched[1].length + 2) }
+    if (matched = text.match(/^`([^`]+)`( *)/)) {
+      return { labelName: matched[1], text: text.slice(matched[1].length + matched[2].length + 2) }
     }
     return { labelName: '', text }
   }
