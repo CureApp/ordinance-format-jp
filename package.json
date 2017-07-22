@@ -1,0 +1,22 @@
+{
+  "name": "ordinance-format-jp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "webpack": "webpack",
+    "test": "webpack test/spec/index.js --target node --output-filename test.js && node dist/test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "remove-flow-types-loader": "^1.0.0",
+    "webpack": "^3.3.0"
+  }
+}
