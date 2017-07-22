@@ -25,6 +25,7 @@ export default class DocumentFactory {
     let id = 1
     let currentArticle: ?Article
     let itemStack: Array<Item> = []
+    let inBlockquote = false
 
     tokens.forEach(token => {
       const currentItem = itemStack[itemStack.length - 1]
@@ -51,6 +52,13 @@ export default class DocumentFactory {
           }
 
           const { labelName, text } = this.parseInline(token.text)
+
+          if (inBlockquote) {
+            const currentElement = currentItem || currentArticle
+            currentElement.appendix = text
+            break
+          }
+
           const paragraphItem = new Item({ id: (++id).toString(), statement: text, labelName })
           // $FlowIssue(he-is-not-null)
           currentArticle.items.push(paragraphItem)
@@ -76,6 +84,14 @@ export default class DocumentFactory {
         }
         case 'code': {
           doc.timestamps = token.text.split('\n')
+          break
+        }
+        case 'blockquote_start': {
+          inBlockquote = true
+          break
+        }
+        case 'blockquote_end': {
+          inBlockquote = false
           break
         }
       }

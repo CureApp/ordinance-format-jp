@@ -61,3 +61,12 @@ ol.timestamps {
   list-style-type: none;
   margin-top: 3em;
 }
+
+div.appendix {
+  padding-top: 2em;
+}
+
+div.appendix>p {
+  padding: 0;
+  margin: 0;
+}

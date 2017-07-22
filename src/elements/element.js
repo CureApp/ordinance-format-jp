@@ -32,7 +32,7 @@ export default class Element {
     }
     return tag(
       'div',
-      this.appendix,
+      this.appendix.split('\n').map(t => tag('p', t)).join('\n'),
       { class: 'appendix' }
     )
   }
