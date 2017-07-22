@@ -1,9 +1,4 @@
-ol {
-  margin: 0;
-  padding: 0;
-}
-
-div.ordinance {
+div.legal-doc-jp {
   max-width: 1200px;
   line-height: 1.5em;
   font-size: 14px;
@@ -12,88 +7,93 @@ div.ordinance {
   color: #333337;
 }
 
-h1.documentTitle {
+div.legal-doc-jp ol {
+  margin: 0;
+  padding: 0;
+}
+
+div.legal-doc-jp h1.documentTitle {
   text-align: center;
   font-size: 20px;
   margin-bottom: 2em;
 }
 
-div.documentDescription {
+div.legal-doc-jp div.documentDescription {
   margin-bottom: 3em;
 }
 
-div.article {
+div.legal-doc-jp div.article {
   margin-bottom: 2em;
   counter-increment: articleNum;
 }
 
-h2.articleTitle:before {
+div.legal-doc-jp h2.articleTitle:before {
   content: "第" counter(articleNum) "条　";
 }
 
-h2.articleTitle {
+div.legal-doc-jp h2.articleTitle {
   font-size: 1em;
   font-weight: normal;
   margin-bottom: auto;
 }
 
-.articleItems {
+div.legal-doc-jp .articleItems {
   padding-left: 2.5em;
 }
 
 
-.item1>ol.subItems {
+div.legal-doc-jp .item1>ol.subItems {
   list-style-type: none;
 }
-.item1>ol.subItems>li{
+div.legal-doc-jp .item1>ol.subItems>li{
   counter-increment: parenNum;
 }
-.item1>ol.subItems>li:before{
+div.legal-doc-jp .item1>ol.subItems>li:before{
   content: "(" counter(parenNum) ")";
 }
-div.item2 {
+div.legal-doc-jp div.item2 {
   display: inline;
   padding-left: 0.3em;
 }
-div.item2>div.statement {
+div.legal-doc-jp div.item2>div.statement {
   display: inline;
 }
 
 
-.item2>ol.subItems {
+div.legal-doc-jp .item2>ol.subItems {
   padding-left: 3.5em;
   list-style-type: katakana;
 }
 
 
-.item3>ol.subItems {
+div.legal-doc-jp .item3>ol.subItems {
   list-style-type: none;
 }
-.item3>ol.subItems>li{
+div.legal-doc-jp .item3>ol.subItems>li{
   counter-increment: parenKatakana;
 }
-.item3>ol.subItems>li:before{
+div.legal-doc-jp .item3>ol.subItems>li:before{
   content: "(" counter(parenKatakana, katakana) ")";
 }
-div.item4 {
+div.legal-doc-jp div.item4 {
   display: inline;
   padding-left: 0.3em;
 }
-div.item4>div.statement {
+div.legal-doc-jp div.item4>div.statement {
   display: inline;
 }
 
 
-ol.timestamps {
+div.legal-doc-jp ol.timestamps {
   list-style-type: none;
   margin-top: 3em;
 }
 
-div.appendix {
+div.legal-doc-jp div.appendix {
   padding-top: 2em;
 }
 
-div.appendix>p {
+div.legal-doc-jp div.appendix>p {
   padding: 0;
   margin: 0;
 }
