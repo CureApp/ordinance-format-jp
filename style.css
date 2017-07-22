@@ -1,0 +1,57 @@
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+div#document01 {
+  max-width: 1024px;
+  line-height: 1.2em;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: 40px auto;
+}
+
+h1.documentTitle {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 2em;
+}
+
+div.documentDescription {
+  margin-bottom: 3em;
+}
+
+h2.articleTitle {
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: auto;
+}
+
+div.article {
+  margin-bottom: 2em;
+}
+
+.articleItems {
+  padding-left: 2.5em;
+}
+div.item2 {
+  display: inline;
+}
+div.item2>div.statement {
+  display: inline;
+}
+
+.item1>ol.subItems {
+  list-style-type: none;
+}
+.item1>ol.subItems>li{
+  counter-increment: cnt;
+}
+.item1>ol.subItems>li:before{
+  content: "(" counter(cnt) ")";
+}
+
+.item2>ol.subItems {
+  padding-left: 3.5em;
+  list-style-type: katakana;
+}
