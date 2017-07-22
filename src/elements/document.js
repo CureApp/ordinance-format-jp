@@ -15,7 +15,8 @@ export type PlainDocument = {
 }
 
 export type HtmlOptions = {
-  withStyle?: boolean
+  withStyle?: boolean, // styleタグも出力するかどうか
+  elementId?: string, // トップレベル要素のid デフォルトは 'ordinance'
 }
 
 /**
@@ -42,6 +43,7 @@ export default class Document {
   }
 
   toHtml(ds: DocumentStructure, options: HtmlOptions): string {
+    const elementId = options.elementId || 'ordinance'
     const h1 = tag(
       'h1',
       this.title,
@@ -57,7 +59,11 @@ export default class Document {
     const articles = this.articles.map(article => article.toHtml(ds)).join('\n')
     const footer = this.renderTimestamps()
 
-    const html = [h1, description, articles, footer].join('\n')
+    const html = tag(
+      'div',
+      [h1, description, articles, footer].join('\n'),
+      { id: elementId, class: 'ordinance' }
+    )
     return this.resolveLabels(html, ds)
   }
 

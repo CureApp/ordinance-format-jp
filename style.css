@@ -3,7 +3,7 @@ ol {
   padding: 0;
 }
 
-div#document01 {
+div.ordinance {
   max-width: 1024px;
   line-height: 1.2em;
   font-size: 14px;
