@@ -57,7 +57,8 @@ export default class Document {
     const articles = this.articles.map(article => article.toHtml(ds)).join('¥n')
     const footer = this.renderTimestamps()
 
-    return [h1, description, articles, footer].join('¥n')
+    const html = [h1, description, articles, footer].join('¥n')
+    return this.resolveLabels(html, ds)
   }
 
   renderTimestamps(): string {
@@ -73,5 +74,9 @@ export default class Document {
       { class: 'timestamps' },
       true
     )
+  }
+
+  resolveLabels(html: string, ds: DocumentStructure): string {
+    return html.replace(/`[^`]+/g, label => ds.getElementNameByLabel(label))
   }
 }
