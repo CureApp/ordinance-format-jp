@@ -37,7 +37,7 @@ export default class Item extends Element {
     return tag(
       'div',
       [statement, itemsHtml, appendix].join('\n'),
-      { class: `item${num}` },
+      { class: `item${depth}` },
       true // no escape
     )
   }
