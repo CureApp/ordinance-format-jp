@@ -68,7 +68,7 @@ export default class DocumentFactory {
           break
         }
         case 'code': {
-          doc.timestamps = token.text.split('¥n')
+          doc.timestamps = token.text.split('\n')
           break
         }
       }
