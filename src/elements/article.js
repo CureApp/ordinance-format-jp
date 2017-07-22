@@ -23,12 +23,10 @@ export default class Article extends Element {
   }
 
   toHtml(ds: DocumentStructure): string {
-    const num = ds.getNumber(this)
-
     // タイトル部
     const h2 = tag(
       'h2',
-      `第${num}条 ${this.title}`,
+      this.title,
       { class: 'articleTitle'}
     )
 

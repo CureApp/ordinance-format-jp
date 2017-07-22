@@ -22,14 +22,19 @@ div.documentDescription {
   margin-bottom: 3em;
 }
 
+div.article {
+  margin-bottom: 2em;
+  counter-increment: articleNum;
+}
+
+h2.articleTitle:before {
+  content: "第" counter(articleNum) "条　";
+}
+
 h2.articleTitle {
   font-size: 1em;
   font-weight: normal;
   margin-bottom: auto;
-}
-
-div.article {
-  margin-bottom: 2em;
 }
 
 .articleItems {
