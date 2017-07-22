@@ -2,9 +2,12 @@
 
 export type Attributes = { [key: string]: string }
 
-import e from './escape-html'
+import escapeHtml from './escape-html'
 
-export default function tag(name: string, body?: string, attrs?: Attributes): string {
+const through = (v: string): string => v
+
+export default function tag(name: string, body?: string, attrs?: ?Attributes, noEscape?: boolean = false): string {
+  const e = noEscape ? through : escapeHtml
   // $FlowIssue(object-loop)
   const attrsStr = !attrs ? '' : ' ' + Object.keys(attrs).map(key => `${key}="${attrs[key]}"`).join(' ')
   let html = `<${e(name)}${e(attrsStr)}`

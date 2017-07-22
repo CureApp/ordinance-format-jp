@@ -23,7 +23,55 @@ export default class Article extends Element {
   }
 
   toHtml(ds: DocumentStructure): string {
-    return tag('h2', this.title, { class: 'FF'})
+    const num = ds.getNumber(this)
+
+    // タイトル部
+    const h2 = tag(
+      'h2',
+      `第${num}条 ${this.title}`,
+      { class: 'articleTitle'}
+    )
+
+    const itemsHtml = this.renderItems(ds)
+    const appendix = this.renderAppendix()
+
+    return tag(
+      'div',
+      [h2, itemsHtml, appendix].join('¥n'),
+      { class: 'article' },
+      true // no escape
+    )
+  }
+
+  renderItems(ds: DocumentStructure): string {
+    if (this.items.length === 0) {
+      return ''
+    }
+
+    // 項が1つだけなら、<ol>ではなく<div>で囲む
+    if (this.items.length === 1) {
+      return tag(
+        'div',
+        this.items[0].toHtml(ds),
+        { class: 'articleItems' },
+        true // no escape
+      )
+    }
+
+    // itemそれぞれに<li>タグをつけて囲む
+    const inner = this.items.map(item => tag(
+      'li',
+      item.toHtml(ds),
+      { class: 'articleItem' },
+      true // no escape
+    )).join('¥n')
+
+    return tag(
+      'ol',
+      inner,
+      { class: 'articleItems' },
+      true
+    )
   }
 
   // this method should be implemented at Element,

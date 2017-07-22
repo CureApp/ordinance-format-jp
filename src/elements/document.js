@@ -1,6 +1,7 @@
 // @flow
 import Element from './element'
 import Article from './article'
+import tag from '../utils/tag'
 
 import type { PlainElement } from './element'
 import type { PlainArticle } from './article'
@@ -41,6 +42,36 @@ export default class Document {
   }
 
   toHtml(ds: DocumentStructure, options: HtmlOptions): string {
-    return this.articles.map(article => article.toHtml(ds)).join('¥n')
+    const h1 = tag(
+      'h1',
+      this.title,
+      { class: 'documentTitle' },
+    )
+
+    const description = tag(
+      'h1',
+      this.description,
+      { class: 'documentDescription' },
+    )
+
+    const articles = this.articles.map(article => article.toHtml(ds)).join('¥n')
+    const footer = this.renderTimestamps()
+
+    return [h1, description, articles, footer].join('¥n')
+  }
+
+  renderTimestamps(): string {
+    const inner = this.timestamps.map(ts => tag(
+      'li',
+      ts,
+      { class: 'timestamp' }
+    )).join('¥n')
+
+    return tag(
+      'ol',
+      inner,
+      { class: 'timestamps' },
+      true
+    )
   }
 }

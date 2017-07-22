@@ -1,5 +1,6 @@
 // @flow
 import type Item, { PlainItem } from './item'
+import tag from '../utils/tag'
 
 export type PlainElement = {
   id: string,
@@ -23,6 +24,19 @@ export default class Element {
     this.labelName = plain.labelName || ''
     this.appendix = plain.appendix || ''
     this.constructItems(plain.items)
+  }
+
+  renderAppendix(): string {
+    if (!this.appendix) {
+      return ''
+    }
+    return tag(
+      'div',
+      this.appendix,
+      {
+        class: 'appendix'
+      }
+    )
   }
 
   // template method to avoid circular dependencies (Item <=> Element)
