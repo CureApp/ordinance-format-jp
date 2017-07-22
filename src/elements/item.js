@@ -17,4 +17,10 @@ export default class Item extends Element {
     super(plain)
     this.statement = plain.statement
   }
+
+  // this method should be implemented at Element,
+  // but written here to avoid circular dependencies (Element <=> Item)
+  constructItems(plainItems?: Array<PlainItem>) {
+    this.items = plainItems ? plainItems.map(pItem => new Item(pItem)) : []
+  }
 }

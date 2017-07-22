@@ -1,6 +1,5 @@
 // @flow
-import Item from './item'
-import type { PlainItem } from './item'
+import type Item, { PlainItem } from './item'
 
 export type PlainElement = {
   id: string,
@@ -22,7 +21,12 @@ export default class Element {
   constructor(plain: PlainElement) {
     this.id = plain.id
     this.labelName = plain.labelName || ''
-    this.items = plain.items ? plain.items.map(pItem => new Item(pItem)) : []
     this.appendix = plain.appendix || ''
+    this.constructItems(plain.items)
+  }
+
+  // template method to avoid circular dependencies (Item <=> Element)
+  constructItems() {
+    throw new Error('implement constructItems() method')
   }
 }
