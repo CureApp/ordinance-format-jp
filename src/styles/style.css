@@ -2,9 +2,9 @@ div.legal-doc-jp {
   max-width: 1200px;
   line-height: 1.5em;
   font-size: 14px;
-  font-family: sans-serif;
-  margin: 40px auto;
+  margin: 6em auto;
   color: #333337;
+  padding: 0 2em;
 }
 
 div.legal-doc-jp ol {
@@ -15,7 +15,7 @@ div.legal-doc-jp ol {
 div.legal-doc-jp h1.documentTitle {
   text-align: center;
   font-size: 20px;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 div.legal-doc-jp div.documentDescription {
@@ -23,7 +23,7 @@ div.legal-doc-jp div.documentDescription {
 }
 
 div.legal-doc-jp div.article {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   counter-increment: articleNum;
 }
 
@@ -61,8 +61,9 @@ div.legal-doc-jp div.item2>div.statement {
 
 
 div.legal-doc-jp .item2>ol.subItems {
-  padding-left: 3.5em;
+  padding-left: 3.1em;
   list-style-type: katakana;
+  margin-bottom: -1.5em;
 }
 
 
@@ -90,10 +91,8 @@ div.legal-doc-jp ol.timestamps {
 }
 
 div.legal-doc-jp div.appendix {
-  padding-top: 2em;
+  padding-top: 1.5em;
 }
 
 div.legal-doc-jp div.appendix>p {
   padding: 0;
-  margin: 0;
-}
