@@ -41,6 +41,32 @@ export default class Item extends Element {
     )
   }
 
+  toPlainText(ds: DocumentStructure): string {
+    const aiueo = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ'.split('')
+    const elementNameConverters = [
+      (num: number): string => `第${num}条`,
+      (num: number): string => `${num}.`,
+      (num: number): string => `（${num}）`,
+      (num: number): string => `${aiueo[num - 1]}`,
+      (num: number): string => `（${aiueo[num - 1]}）`,
+      (num: number): string => `の${num}`,
+      (num: number): string => `の${num}`,
+      (num: number): string => `の${num}`,
+      (num: number): string => `の${num}`,
+      (num: number): string => `の${num}`,
+    ]
+    const depth = ds.getDepth(this)
+    const num = ds.getNumber(this)
+    const spaces = '                 '.slice(0, depth * 2)
+    const prefix = elementNameConverters[depth](num)
+    const firstLine = spaces + prefix + ' ' + this.statement
+    if (this.items.length === 0) {
+      return firstLine
+    }
+    const sub = this.items.map(item => item.toPlainText(ds)).join('\n')
+    return [firstLine, sub].join('\n')
+  }
+
   renderItems(ds: DocumentStructure): string {
     if (this.items.length === 0) {
       return ''

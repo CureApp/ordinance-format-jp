@@ -40,6 +40,16 @@ export default class Article extends Element {
     )
   }
 
+  toPlainText(ds: DocumentStructure): string {
+    const num = ds.getNumber(this)
+    const title = `第${num}条 ${this.title}`
+    let body = this.items.map(item => item.toPlainText(ds)).join('\n')
+    if (this.items.length === 1) {
+      body = '     ' + body.slice(5)
+    }
+    return [title, body].join('\n')
+  }
+
   renderItems(ds: DocumentStructure): string {
     if (this.items.length === 0) {
       return ''

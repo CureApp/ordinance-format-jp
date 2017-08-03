@@ -19,4 +19,9 @@ export default class LegalDocJp {
     const ds = new DocumentStructure(this.document)
     return this.document.toHtml(ds, options || {})
   }
+
+  toPlainText(): string {
+    const ds = new DocumentStructure(this.document)
+    return this.document.toPlainText(ds)
+  }
 }

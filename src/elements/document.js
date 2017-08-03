@@ -75,6 +75,13 @@ export default class Document {
     return `<html><head><style>\n${style}</style><body>\n${html}</body></html>`
   }
 
+  toPlainText(ds: DocumentStructure): string {
+
+    const articles = this.articles.map(article => article.toPlainText(ds)).join('\n\n')
+    const footer = this.timestamps.map(ts => `  ` + ts).join('\n')
+    return [this.title, this.description, articles, footer].join('\n\n')
+  }
+
   renderTimestamps(): string {
     const inner = this.timestamps.map(ts => tag(
       'li',
