@@ -17,7 +17,7 @@ export type PlainDocument = {
 
 export type HtmlOptions = {
   standalone?: boolean, // 単体でHTMLとして完結させるか
-  elementId?: string, // トップレベル要素のid デフォルトは 'legal-doc-jp'
+  elementId?: string, // トップレベル要素のid デフォルトは 'legal-doc-format-jp'
 }
 
 /**
@@ -44,7 +44,7 @@ export default class Document {
   }
 
   toHtml(ds: DocumentStructure, options: HtmlOptions): string {
-    const elementId = options.elementId || 'legal-doc-jp'
+    const elementId = options.elementId || 'legal-doc-format-jp'
     const h1 = tag(
       'h1',
       this.title,
@@ -63,7 +63,7 @@ export default class Document {
     const htmlWithoutLabelLinks = tag(
       'div',
       [h1, description, articles, footer].join('\n'),
-      { id: elementId, class: 'legal-doc-jp' }
+      { id: elementId, class: 'legal-doc-format-jp' }
     )
 
     const html = this.resolveLabels(htmlWithoutLabelLinks, ds)

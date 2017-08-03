@@ -1,4 +1,4 @@
-div.legal-doc-jp {
+div.legal-doc-format-jp {
   max-width: 1200px;
   line-height: 1.5em;
   font-size: 14px;
@@ -7,92 +7,92 @@ div.legal-doc-jp {
   padding: 0 2em;
 }
 
-div.legal-doc-jp ol {
+div.legal-doc-format-jp ol {
   margin: 0;
   padding: 0;
 }
 
-div.legal-doc-jp h1.documentTitle {
+div.legal-doc-format-jp h1.documentTitle {
   text-align: center;
   font-size: 20px;
   margin-bottom: 3em;
 }
 
-div.legal-doc-jp div.documentDescription {
+div.legal-doc-format-jp div.documentDescription {
   margin-bottom: 3em;
 }
 
-div.legal-doc-jp div.article {
+div.legal-doc-format-jp div.article {
   margin-bottom: 1.5em;
   counter-increment: articleNum;
 }
 
-div.legal-doc-jp h2.articleTitle:before {
+div.legal-doc-format-jp h2.articleTitle:before {
   content: "第" counter(articleNum) "条　";
 }
 
-div.legal-doc-jp h2.articleTitle {
+div.legal-doc-format-jp h2.articleTitle {
   font-size: 1em;
   font-weight: normal;
   margin-bottom: auto;
 }
 
-div.legal-doc-jp .articleItems {
+div.legal-doc-format-jp .articleItems {
   padding-left: 2.5em;
 }
 
 
-div.legal-doc-jp .item1>ol.subItems {
+div.legal-doc-format-jp .item1>ol.subItems {
   list-style-type: none;
 }
-div.legal-doc-jp .item1>ol.subItems>li{
+div.legal-doc-format-jp .item1>ol.subItems>li{
   counter-increment: parenNum;
 }
-div.legal-doc-jp .item1>ol.subItems>li:before{
+div.legal-doc-format-jp .item1>ol.subItems>li:before{
   content: "(" counter(parenNum) ")";
 }
-div.legal-doc-jp div.item2 {
+div.legal-doc-format-jp div.item2 {
   display: inline;
   padding-left: 0.3em;
 }
-div.legal-doc-jp div.item2>div.statement {
+div.legal-doc-format-jp div.item2>div.statement {
   display: inline;
 }
 
 
-div.legal-doc-jp .item2>ol.subItems {
+div.legal-doc-format-jp .item2>ol.subItems {
   padding-left: 3.1em;
   list-style-type: katakana;
   margin-bottom: -1.5em;
 }
 
 
-div.legal-doc-jp .item3>ol.subItems {
+div.legal-doc-format-jp .item3>ol.subItems {
   list-style-type: none;
 }
-div.legal-doc-jp .item3>ol.subItems>li{
+div.legal-doc-format-jp .item3>ol.subItems>li{
   counter-increment: parenKatakana;
 }
-div.legal-doc-jp .item3>ol.subItems>li:before{
+div.legal-doc-format-jp .item3>ol.subItems>li:before{
   content: "(" counter(parenKatakana, katakana) ")";
 }
-div.legal-doc-jp div.item4 {
+div.legal-doc-format-jp div.item4 {
   display: inline;
   padding-left: 0.3em;
 }
-div.legal-doc-jp div.item4>div.statement {
+div.legal-doc-format-jp div.item4>div.statement {
   display: inline;
 }
 
 
-div.legal-doc-jp ol.timestamps {
+div.legal-doc-format-jp ol.timestamps {
   list-style-type: none;
   margin-top: 3em;
 }
 
-div.legal-doc-jp div.appendix {
+div.legal-doc-format-jp div.appendix {
   padding-top: 1.5em;
 }
 
-div.legal-doc-jp div.appendix>p {
+div.legal-doc-format-jp div.appendix>p {
   padding: 0;
