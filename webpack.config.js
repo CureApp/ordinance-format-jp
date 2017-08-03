@@ -15,7 +15,7 @@ module.exports = {
       {
         test: /\.js$/,
         enforce: 'pre',
-        use: ['remove-flow-types-loader'],
+        use: ['babel-loader','remove-flow-types-loader'],
         include: [
           path.join(__dirname, 'src'),
           path.join(__dirname, 'test/spec'),
@@ -25,7 +25,7 @@ module.exports = {
         test: /\.css$/,
         use: 'raw-loader'
       }
-    ]
+    ],
   },
   plugins: [
     new webpack.BannerPlugin({banner: '#!/usr/bin/env node', raw: true})
