@@ -2,7 +2,16 @@
 import LegalDocJp, { format } from '../../src/index'
 import fs from 'fs'
 
-const markdownText = fs.readFileSync(__dirname + '/../markdowns/corp-site-pp.md', 'utf8')
-const html = format(markdownText, { standalone: false, elementId: 'corp-site-pp' })
+let styled = true,
+    elementId = 'corp-site-pp'
+process.argv.forEach((arg, index) => {
+  if (arg === '--nostyle') {
+    styled = false
+  } else if (arg === '--elementId') {
+    elementId = process.argv[++index]
+  }
+})
+const markdownText = fs.readFileSync(process.argv[2], 'utf8')
+const html = format(markdownText, { standalone: styled, elementId: elementId })
 
 console.log(html)
