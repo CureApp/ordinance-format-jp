@@ -103,7 +103,7 @@ export default class DocumentFactory {
   parseInline(text: string): { labelName: string, text: string } {
     const t = marked(text, { renderer: inlineRenderer })
     let matched
-    if (matched = t.match(/^`([^`]+)`( *)/)) {
+    if (matched = t.match(/^`([^\$][^`]+)`( *)/)) {
       return { labelName: matched[1], text: t.slice(matched[1].length + matched[2].length + 2) }
     }
     return { labelName: '', text: t }
