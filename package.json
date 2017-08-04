@@ -16,6 +16,7 @@
   ],
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.11.0",
     "marked": "^0.3.6"
   },
   "devDependencies": {
