@@ -1,5 +1,5 @@
 // @flow
-import LegalDocJp, { format } from '../../src/index'
+import legalDocFormatJp, { format } from '../../src/index'
 import fs from 'fs'
 import Program from 'commander'
 

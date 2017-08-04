@@ -96,7 +96,7 @@ Markdownと同じようにつけることができます。
 
 # JavaScript API
 ```js
-const legalDocJp = require('legal-doc-format-jp')
+const legalDocFormatJp = require('legal-doc-format-jp')
 const markdownText = require('fs').readFileSync('/path/to/somefile.md', 'utf8')
-const html = legalDocJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
+const html = legalDocFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
 ```

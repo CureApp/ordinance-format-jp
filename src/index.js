@@ -4,10 +4,10 @@ import DocumentStructure from './meta/document-structure'
 import type Document, { HtmlOptions } from './elements/document'
 
 export function format(markdownText: string, options: HtmlOptions) {
-  return new LegalDocJp(markdownText).toHtml(options)
+  return new legalDocFormatJp(markdownText).toHtml(options)
 }
 
-export default class LegalDocJp {
+export default class legalDocFormatJp {
   document: Document
 
   constructor(markdownText: string) {
