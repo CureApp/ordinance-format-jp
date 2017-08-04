@@ -15,11 +15,11 @@ Program
   .option('--nostyle', 'outputs only the HTML structure without the style tag')
   .option('--elementId <id>', 'id name of the top level div tag')
 
-Program.parse(process.argv);
+Program.parse(process.argv)
 
 if (typeof filePath === 'undefined') {
    console.error('no filePath given!')
-   process.exit(1);
+   process.exit(1)
 }
 
 let styled = !Program.nostyle,
