@@ -3,8 +3,6 @@
 
 # できあがりの文書例
 
-
-
 # インストール
 ```sh
 npm install -g legal-doc-format-jp
