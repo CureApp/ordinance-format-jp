@@ -30,7 +30,6 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "raw-loader": "^0.5.1",
-    "remove-flow-types-loader": "^1.0.0",
     "webpack": "^3.3.0"
   }
 }
