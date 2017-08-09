@@ -62,4 +62,4 @@ const webConfig = {
   }
 }
 
-module.exports = [ serverConfig, webConfig ]
+module.exports = [ nodeConfig, webConfig ]
