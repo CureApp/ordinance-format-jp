@@ -75,7 +75,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //      
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _tag = __webpack_require__(1);
 
@@ -147,9 +147,6 @@ var through = function through(v) {
 };
 
 // デフォルトではescapeしない
-//      
-
-
 function tag(name, body, attrs) {
   var noEscape = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
 
@@ -176,8 +173,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //      
-
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _element = __webpack_require__(0);
 
@@ -314,7 +310,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //      
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
  * 条
@@ -419,7 +415,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //      
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
  * 項、およびそれ以下の概念
@@ -530,8 +526,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //      
-
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 exports.format = format;
 
@@ -589,7 +584,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //      
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _document = __webpack_require__(2);
 
@@ -656,10 +651,10 @@ var DocumentFactory = function () {
               // depth が 2以上のときはarticleとみなす
 
               var _parseInline = _this.parseInline(token.text),
-                  labelName = _parseInline.labelName,
+                  _labelName = _parseInline.labelName,
                   text = _parseInline.text;
 
-              var article = new _article2.default({ id: (++id).toString(), title: text, labelName: labelName });
+              var article = new _article2.default({ id: (++id).toString(), title: text, labelName: _labelName });
               doc.articles.push(article);
               currentArticle = article;
               itemStack = [];
@@ -674,7 +669,7 @@ var DocumentFactory = function () {
               }
 
               var _parseInline2 = _this.parseInline(token.text),
-                  _labelName = _parseInline2.labelName,
+                  _labelName2 = _parseInline2.labelName,
                   _text = _parseInline2.text;
 
               if (inBlockquote) {
@@ -683,7 +678,7 @@ var DocumentFactory = function () {
                 break;
               }
 
-              var paragraphItem = new _item2.default({ id: (++id).toString(), statement: _text, labelName: _labelName });
+              var paragraphItem = new _item2.default({ id: (++id).toString(), statement: _text, labelName: _labelName2 });
               // $FlowIssue(he-is-not-null)
               currentArticle.items.push(paragraphItem);
               itemStack = [paragraphItem];
@@ -705,11 +700,11 @@ var DocumentFactory = function () {
           case 'text':
             {
               var _parseInline3 = _this.parseInline(token.text),
-                  _labelName2 = _parseInline3.labelName,
+                  _labelName3 = _parseInline3.labelName,
                   _text2 = _parseInline3.text;
 
               currentItem.statement = _text2;
-              currentItem.labelName = _labelName2;
+              currentItem.labelName = _labelName3;
               break;
             }
           case 'code':
@@ -760,8 +755,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = escapeHtml;
-//      
-
 var table = {
   '&': '&amp;',
   "'": '&#x27;',
@@ -1985,8 +1978,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //      
-
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _document = __webpack_require__(2);
 
@@ -2091,46 +2083,47 @@ module.exports = require("fs");
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_index__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fs__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_fs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_commander__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_commander___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_commander__);
+// @flow
 
 
-var _index = __webpack_require__(5);
 
-var _index2 = _interopRequireDefault(_index);
 
-var _fs = __webpack_require__(11);
+let filePath
+__WEBPACK_IMPORTED_MODULE_2_commander___default.a
+  .version('1.0.0')
+  .usage('<filePath> options')
+  .action(function (path) {
+     filePath = path
+  })
 
-var _fs2 = _interopRequireDefault(_fs);
+__WEBPACK_IMPORTED_MODULE_2_commander___default.a
+  .option('--nostyle', 'outputs only the HTML structure without the style tag')
+  .option('--elementId <id>', 'id name of the top level div tag')
 
-var _commander = __webpack_require__(13);
-
-var _commander2 = _interopRequireDefault(_commander);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var filePath = void 0; //      
-
-_commander2.default.version('1.0.0').usage('<filePath> options').action(function (path) {
-  filePath = path;
-});
-
-_commander2.default.option('--nostyle', 'outputs only the HTML structure without the style tag').option('--elementId <id>', 'id name of the top level div tag');
-
-_commander2.default.parse(process.argv);
+__WEBPACK_IMPORTED_MODULE_2_commander___default.a.parse(process.argv)
 
 if (typeof filePath === 'undefined') {
-  console.error('no filePath given!');
-  process.exit(1);
+   console.error('no filePath given!')
+   process.exit(1)
 }
 
-var styled = !_commander2.default.nostyle,
-    elementId = _commander2.default.elementId || 'corp-site-pp';
-var markdownText = _fs2.default.readFileSync(filePath, 'utf8');
-var html = (0, _index.format)(markdownText, { standalone: styled, elementId: elementId });
+let styled = !__WEBPACK_IMPORTED_MODULE_2_commander___default.a.nostyle,
+    elementId = __WEBPACK_IMPORTED_MODULE_2_commander___default.a.elementId || 'corp-site-pp'
+const markdownText = __WEBPACK_IMPORTED_MODULE_1_fs___default.a.readFileSync(filePath, 'utf8')
+const html = Object(__WEBPACK_IMPORTED_MODULE_0__src_index__["format"])(markdownText, { standalone: styled, elementId: elementId })
 
-console.log(html);
+console.log(html)
+
 
 /***/ }),
 /* 13 */

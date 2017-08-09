@@ -8,7 +8,7 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "test": "webpack test/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"
+    "test": "webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"
   },
   "author": [
     "shinout",

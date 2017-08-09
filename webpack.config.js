@@ -5,7 +5,7 @@ const serverConfig = {
   target: 'node',
   entry: {
       bundle: './src/index.js',
-      command: './test/spec/index.js'
+      command: './bin/spec/index.js'
   },
   output: {
   filename: '[name].js',
@@ -39,7 +39,7 @@ const serverConfig = {
 
 const webConfig = {
   target: 'web',
-  entry: './test/demo/demo.js',
+  entry: './bin/demo/demo.js',
   output: {
     filename: 'demo.js',
     path: path.resolve(__dirname, 'dist')

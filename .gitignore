@@ -1,4 +1,5 @@
 node_modules
 package-lock.json
-test/markdowns
+dist
+bin/markdowns
 npm-debug.log
