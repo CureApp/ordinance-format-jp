@@ -541,7 +541,7 @@ window.onload = function () {
   var mT = document.getElementById("markdownText");
   var cT = (0, _index.format)(mT.value, { standalone: false, elementId: 'corp-site-pp' });
   document.getElementById("convertedText").innerHTML = cT;
-  mT.addEventListener("change", onChangeText);
+  mT.addEventListener("keydown", onChangeText);
 };
 
 /***/ }),

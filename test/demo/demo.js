@@ -10,5 +10,5 @@ window.onload = function() {
   const mT = document.getElementById("markdownText")
   const cT = format(mT.value, { standalone: false, elementId: 'corp-site-pp' })
   document.getElementById("convertedText").innerHTML = cT
-  mT.addEventListener("change", onChangeText)
+  mT.addEventListener("keydown", onChangeText)
 }
