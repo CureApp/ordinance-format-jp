@@ -2,10 +2,11 @@
 import legalDocFormatJp, { format } from '../../src/index'
 import fs from 'fs'
 import Program from 'commander'
+import { version } from '../../package.json'
 
 let filePath
 Program
-  .version('1.0.0')
+  .version(version)
   .usage('<filePath> options')
   .action(function (path) {
      filePath = path

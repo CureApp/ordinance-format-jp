@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const serverConfig = {
+const nodeConfig = {
   target: 'node',
   entry: {
       bundle: './src/index.js',
@@ -10,7 +10,7 @@ const serverConfig = {
   output: {
   filename: '[name].js',
   path: path.resolve(__dirname, 'dist')
-},
+  },
   node: {
     __dirname: true,
   },
@@ -22,7 +22,6 @@ const serverConfig = {
         use: ['babel-loader'],
         include: [
           path.join(__dirname, 'src'),
-          path.join(__dirname, 'test'),
           path.resolve(__dirname, "node_modules")
         ],
       },
@@ -52,7 +51,6 @@ const webConfig = {
         use: ['babel-loader'],
         include: [
           path.join(__dirname, 'src'),
-          path.join(__dirname, 'test'),
           path.resolve(__dirname, "node_modules"),
         ],
       },

@@ -2,6 +2,7 @@
 公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換するもの。
 
 # できあがりの文書例
+(デモページ)[https://cureapp.github.io/legal-doc-format-jp]
 
 # インストール
 ```sh
@@ -9,12 +10,17 @@ npm install -g legal-doc-format-jp
 ```
 
 # 使い方
+## 標準出力にHTMLを吐き出す場合
 ```sh
 legal-doc-format-jp <markdown file>
 ```
 
-標準出力にHTMLが吐き出されます
+## ブラウザで使う場合
+```
+import { format } from 'legalDocFormatJp'
 
+const formatedText = format(<markdownText>, { standalone: false, elementId: 'corp-site-pp'})
+```
 
 # オプション
 - `--nostyle`: styleタグをつけず、HTML構造のみ出力します。

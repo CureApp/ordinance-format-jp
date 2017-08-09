@@ -2093,14 +2093,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_fs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_commander__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_commander___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_commander__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__package_json__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__package_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__package_json__);
 // @flow
+
 
 
 
 
 let filePath
 __WEBPACK_IMPORTED_MODULE_2_commander___default.a
-  .version('1.0.0')
+  .version(__WEBPACK_IMPORTED_MODULE_3__package_json__["version"])
   .usage('<filePath> options')
   .action(function (path) {
      filePath = path
@@ -2122,7 +2125,7 @@ let styled = !__WEBPACK_IMPORTED_MODULE_2_commander___default.a.nostyle,
 const markdownText = __WEBPACK_IMPORTED_MODULE_1_fs___default.a.readFileSync(filePath, 'utf8')
 const html = Object(__WEBPACK_IMPORTED_MODULE_0__src_index__["format"])(markdownText, { standalone: styled, elementId: elementId })
 
-console.log(html)
+// console.log(html)
 
 
 /***/ }),
@@ -3244,6 +3247,12 @@ module.exports = require("child_process");
 /***/ (function(module, exports) {
 
 module.exports = require("path");
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = {"name":"legal-doc-format-jp","version":"1.0.0","description":"generate legal doc HTML from markdown text","main":"dist/bundle.js","directories":{"test":"test"},"scripts":{"webpack":"webpack","test":"webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"},"author":["shinout","imoans","Shagamii"],"license":"ISC","dependencies":{"commander":"^2.11.0","marked":"^0.3.6"},"devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.1.1","babel-polyfill":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-es2016":"^6.24.1","babel-preset-es2017":"^6.24.1","babel-preset-latest":"^6.24.1","raw-loader":"^0.5.1","webpack":"^3.3.0"}}
 
 /***/ })
 /******/ ]);

@@ -1,4 +1,4 @@
-import legalDocFormatJp, { format } from '../../src/index.js'
+import { format } from '../../src/index.js'
 
 function onChangeText() {
   const markdownText = document.getElementById("markdownText").value
