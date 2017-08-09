@@ -2,7 +2,7 @@
 公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換するもの。
 
 # できあがりの文書例
-(デモページ)[https://cureapp.github.io/legal-doc-format-jp]
+[デモページ](https://cureapp.github.io/legal-doc-format-jp)
 
 # インストール
 ```sh
