@@ -1,0 +1,126 @@
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: white;
+}
+
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.textform {
+  margin: 8px auto auto 5px;
+  padding: 7px 10px;
+  border: 1px solid #9ab5b7;
+  border-radius: 3px;
+}
+
+.markdownTextArea {
+  height: 98vh;
+  width: 48%;
+  padding-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #9ab5b7;
+  overflow: hidden;
+}
+
+.markdownTextArea textarea {
+  width: 99%;
+  height: 100%;
+  resize: none;
+  font-size: 13px;
+  padding-left: 8px;
+  border: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.convertedTextArea {
+  width: 50%;
+  display: inline-block;
+  padding-right: 3px;
+}
+
+.convertedTextArea .convertedText {
+  height: 98vh;
+  overflow: scroll;
+  padding: 4px 6px;
+}
+
+.convertedTextArea .rowHTML {
+  height: 1000px;
+  overflow: scroll;
+}
+
+.converted-nav .button {
+  margin: 0 2px;
+}
+
+.converted-nav textarea {
+  width: 0;
+  height: 0;
+  resize: none;
+  border: none;
+  position: absolute;
+  top: 0;
+}
+
+.area-title {
+  margin: 3px 5px;
+  padding-bottom: 3px;
+  font-size: 17px;
+  color: #0e545a;
+  border-bottom: 1px solid #9ab5b7;
+}
+
+div.nav {
+  padding: 0 15px 5px 15px;
+  color: #59a5ac;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.nav h1, .nav p {
+  margin: 0;
+  color: #59a5ac;
+}
+
+.nav h1 {
+  font-size: 31px;
+}
+
+.nav .nav-top {
+  float: left;
+}
+.nav-links {
+  padding: 14px;
+  float: right;
+}
+
+.nav-link {
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+div.converted-nav {
+  float: right;
+}
+
+div.converted-nav .button {
+  display: inline-block;
+}
+
+.button {
+  cursor: pointer;
+}

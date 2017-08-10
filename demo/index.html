@@ -3,94 +3,120 @@
   <head>
     <meta charset="utf-8">
     <title>legal-doc-format-jp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../src/styles/style.css">
-    <link rel="stylesheet" type="text/css" href="demo.css">
+    <link rel="stylesheet" type="text/css" href="./styles/index.css">
+    <link rel="stylesheet" type="text/css" href="./styles/markdown.css">
+    <link rel="stylesheet" type="text/css" href="./styles/demo.css">
     <script type="text/javascript" src="../dist/demo.js"></script>
   </head>
   <body>
-    <form name="textform">
-      <textarea
-        id="markdownText"
-        name="markdownText"
-      >
-# 文書タイトル
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
-ここには、序文のような説明文が入ります。
+    <div class="container">
+      <div class="nav">
+        <div class="nav-top nav-bar">
+          <h1>legal-doc-format-jp</h1>
+          <p>Format for Japanese legal documents</p>
+        </div>
+        <div class="nav-links nav-bar">
+          <a class="nav-link" href="./index.html">Doc</a>
+          <a class="nav-link" href="./example.html">Example</a>
+          <a class="nav-link" href="https://github.com/CureApp/legal-doc-format-jp">GitHub</a>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="markdown-body">
+        <h1 id="公文書規則メーカー">公文書、規則メーカー</h1>
+        <p>公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換するもの。</p>
+        <h1 id="できあがりの文書例">できあがりの文書例</h1>
+        <p><a href="./example.html">デモページ</a></p>
+        <div class="figure">
+        <img src="./images/sample.png" alt="サンプル" />
+        </div>
+        <h1 id="インストール">インストール</h1>
+        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">npm</span> install -g legal-doc-format-jp</code></pre></div>
+        <h1 id="使い方">使い方</h1>
+        <h2 id="標準出力にhtmlを吐き出す場合">標準出力にHTMLを吐き出す場合</h2>
+        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">legal-doc-format-jp</span> <span class="op">&lt;</span>markdown file<span class="op">&gt;</span></code></pre></div>
+        <h2 id="ブラウザで使う場合">ブラウザで使う場合</h2>
+        <pre><code>import { format } from &#39;legalDocFormatJp&#39;
 
-## 条と項というのがある
-条がこの、タイトルに相当するものです。
+        const formatedText = format(&lt;markdownText&gt;, { standalone: false, elementId: &#39;corp-site-pp&#39;})</code></pre>
+        <h1 id="オプション">オプション</h1>
+        <ul>
+        <li><code>--nostyle</code>: styleタグをつけず、HTML構造のみ出力します。</li>
+        <li><code>--elementId &lt;elementId&gt;</code>: トップレベルのdivタグのid名です。</li>
+        </ul>
+        <h1 id="markdownの記載ルール">Markdownの記載ルール</h1>
+        <ul>
+        <li>文書のタイトル <code>#</code></li>
+        <li>ディスクリプション</li>
+        <li>タイトルの後に書かれた文章はそのままの文章で出力されます。</li>
+        </ul>
+        <div class="sourceCode"><pre class="sourceCode md"><code class="sourceCode markdown"><span class="fu"># 文書タイトル</span>
+        ここには、序文のような説明文が入ります。 ここには、序文のような説明文が入ります。 ここには、序文のような説明文が入ります。 ここには、序文のような説明文が入ります。</code></pre></div>
+        <ul>
+        <li>条 <code>##</code></li>
+        <li>項</li>
+        <li>項が１つである場合、頭に数字がつきません。</li>
+        <li>複数存在する場合は、各項の頭に <code>数字.</code> すると各項が上から順に番号がふられ出力されます。</li>
+        <li>１行改行した場合も番号がふられ出力されます。</li>
+        <li><code>-</code>では出力されず、数字でのリスト構造のみ出力可能です。</li>
+        <li>入れ子にすることにより、より項の中に項が入れ子に出力出来ます。</li>
+        </ul>
+        <div class="sourceCode"><pre class="sourceCode md"><code class="sourceCode markdown"><span class="fu">## 条と項というのがある</span>
+        項以下には、小項目を追加することができます。
+          24. こうすれば項の下の小項目です
+          5. もちろん複数いけます
+        <span class="bn">    1. そう、二段階いけます</span>
+        <span class="bn">      1. まさかの三段階いけます。</span>
+        <span class="bn">      1. いまのところ三段階まで。</span>
+        <span class="bn">      1. 項を含めると四段階までと考えてもいいですね。</span></code></pre></div>
+        <ul>
+        <li>ラベルと参照</li>
+        <li>ラベルと参照機能は、各条項の頭にラベルとしてキーを設定し、同じキーを各条項の文中に用いることで参照することができる機能です。</li>
+        <li>ラベル、参照いずれも <code>`someKey`</code> で利用できますが、文頭で参照したい場合は必ず <code>`$someKey`</code> のようにキーの頭に <code>$</code> をつけてください。</li>
+        </ul>
+        <div class="sourceCode"><pre class="sourceCode md"><code class="sourceCode markdown"><span class="fu">## `ラベル名` ラベルがつけられた条</span>
+        ラベルをつけると、その条の名前をどこからでも参照することができるようになります。
 
-項は、この文自体。
+        ラベルは、文またはタイトルの先頭にバッククオートで任意の文字列を囲むことでつけられます。
 
-項目が長い複数の文で構成されていたとしても、空行がない限り同じ項として扱われます。
-項目が長い複数の文で構成されていたとしても、空行がない限り同じ項として扱われます。
-項目が長い複数の文で構成されていたとしても、空行がない限り同じ項として扱われます。
-項目が長い複数の文で構成されていたとしても、空行がない限り同じ項として扱われます。
-項目が長い複数の文で構成されていたとしても、空行がない限り同じ項として扱われます。
+        <span class="fu">## ラベルをつかってみましょう。</span>
+        例えばここでラベル名をいれてみます ラベルがつけられた条は =&gt; <span class="bn">`ラベル名`</span>です。
 
-## 項の表示の特別ルール
-項が1つである場合、頭に数字がつきません。
+        小項目にもラベルをつけられる。
+          1. せっかくなので、多段階にしてからそれを実感してみましょう。
+        <span class="bn">    1. まだまだ。</span>
+        <span class="bn">      1. `小項目のラベル` さて、この小項目にラベルをつけました。</span>
 
-## 小項目がたくさん
-項以下には、小項目を追加することができます。
-  24. こうすれば項の下の小項目です
-  5. もちろん複数いけます
-    1. そう、二段階いけます
-      1. まさかの三段階いけます。
-      1. いまのところ三段階まで。
-      1. 項を含めると四段階までと考えてもいいですね。
+        <span class="fu">## 小項目のラベルを参照してみます</span>
+        さきほどの小項目は、<span class="bn">`$小項目のラベル`</span> にありましたね。</code></pre></div>
+        <ul>
+        <li>補足情報</li>
+        <li><code>&gt;</code>で文章がインデントされ、補足情報などとして出力出来ます。</li>
+        <li>タイムスタンプ</li>
+        <li>以下の例のように書くことによって、タイムスタンプを出力出来ます。 <sub><del>markdown <code>Date　</code></del></sub></li>
+        <li>他のリンクや強調、インライン表現などはMarkdownと同じように利用出来ます。</li>
+        </ul>
+        <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">## ちょっとしたテクニック</span>
+        <span class="ot">[リンク](https://github.com/CureApp/legal-doc-jp)</span>、**強調**といったインライン表現は、
+        Markdownと同じようにつけることができます。
 
-## `ラベル名` ラベルがつけられた条
-ラベルをつけると、その条の名前をどこからでも参照することができるようになります。
+        住所や電話番号といった補足情報を入れることができます。
 
-ラベルは、文またはタイトルの先頭にバッククオートで任意の文字列を囲むことでつけられます。
+        &gt;<span class="dt"> 補足情報です。</span>
+        <span class="dt">&gt; ちょっとインデントが加わるので、補足情報を書くのにいいです。</span>
 
-## ラベルをつかってみましょう。
-例えばここでラベル名をいれてみます ラベルがつけられた条は => `ラベル名`です。
-
-小項目にもラベルをつけられる。
-  1. せっかくなので、多段階にしてからそれを実感してみましょう。
-    1. まだまだ。
-      1. `小項目のラベル` さて、この小項目にラベルをつけました。
-
-## `ほげ`小項目のラベルを参照してみます
-さきほどの小項目は、`$小項目のラベル` にありましたね。
-
-先にラベルが登場する必要はありません。先に参照があってもいいんです。 => `小項目のラベル`
-
-## `あとからくるラベル`前に参照されていた条
-`$ほげ`参照があれば、順番がいれかわったりしても大丈夫。
-
-ラベル名はなんでもいいですが、その項目の意味を完結に表したものがわかりやすく、望ましいです。
-
-## ちょっとしたテクニック
-[リンク](https://github.com/CureApp/legal-doc-jp)、**強調**といったインライン表現は、
-Markdownと同じようにつけることができます。
-
-住所や電話番号といった補足情報を入れることができます。
-
-> 補足情報です。
-> ちょっとインデントが加わるので、補足情報を書くのにいいです。
-
-```
-作成日: 2017年7月23日
-変更日: 2017年7月23日
-```
-    </textarea>
-    <div
-      id="convertedText"
-    >
+        ```
+        作成日: 2017年7月23日
+        変更日: 2017年7月23日
+        ```</code></pre></div>
+        <h1 id="javascript-api">JavaScript API</h1>
+        <div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript">
+        <span class="kw">const</span> legalDocFormatJp <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;legal-doc-format-jp&#39;</span>)
+        <span class="kw">const</span> markdownText <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>).<span class="at">readFileSync</span>(<span class="st">&#39;/path/to/somefile.md&#39;</span><span class="op">,</span> <span class="st">&#39;utf8&#39;</span>)
+        <span class="kw">const</span> html <span class="op">=</span> <span class="at">legalDocFormatJp</span>(markdownText<span class="op">,</span> <span class="op">{</span> <span class="dt">standalone</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">elementId</span><span class="op">:</span> <span class="st">&#39;foo-bar&#39;</span> <span class="op">}</span>) <span class="co">// rendered html</span>
+        </code></pre></div>
+      </div>
     </div>
-    </form>
-  </body>
 </html>
