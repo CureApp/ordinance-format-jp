@@ -4,6 +4,8 @@
 # できあがりの文書例
 [デモページ](https://cureapp.github.io/legal-doc-format-jp)
 
+![サンプル](./demo/images/sample.png)
+
 # インストール
 ```sh
 npm install -g legal-doc-format-jp
