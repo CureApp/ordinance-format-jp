@@ -1,7 +1,7 @@
 # 公文書、規則メーカー
-公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換するもの。
+公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換します。
 
-# できあがりの文書例
+# サンプル文書
 [デモページ](https://cureapp.github.io/legal-doc-format-jp)
 
 ![サンプル](./demo/images/sample.png)
@@ -12,17 +12,18 @@ npm install -g legal-doc-format-jp
 ```
 
 # 使い方
-## 標準出力にHTMLを吐き出す場合
+## 標準出力にHTMLを出力する場合
 ```sh
 legal-doc-format-jp <markdown file>
 ```
 
-## ブラウザで使う場合
+## ブラウザで使用する場合
 ```
 import { format } from 'legalDocFormatJp'
 
-const formatedText = format(<markdownText>, { standalone: false, elementId: 'corp-site-pp'})
+const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp-site-pp'})
 ```
+'formatedText'に、整形され、さらにstyleの当てられているHTMLが出力されます。
 
 # オプション
 - `--nostyle`: styleタグをつけず、HTML構造のみ出力します。
@@ -30,7 +31,7 @@ const formatedText = format(<markdownText>, { standalone: false, elementId: 'cor
 
 # Markdownの記載ルール
 - 文書のタイトル ```#```
-- ディスクリプション
+- 前文
   - タイトルの後に書かれた文章はそのままの文章で出力されます。
 
 ```md
@@ -39,15 +40,15 @@ const formatedText = format(<markdownText>, { standalone: false, elementId: 'cor
 ```
 - 条 ```##```
 - 項
-  - 項が１つである場合、頭に数字がつきません。
-  - 複数存在する場合は、各項の頭に ```数字.``` すると各項が上から順に番号がふられ出力されます。
+  - 項が１つである場合、順番はつきません。
+  - 複数存在する場合は、各項の先頭に ```数字.``` と記述すると上から順に項番がふられます。
   - １行改行した場合も番号がふられ出力されます。
   - ```-```では出力されず、数字でのリスト構造のみ出力可能です。
   - 入れ子にすることにより、より項の中に項が入れ子に出力出来ます。
 
 ```md
 ## 条と項というのがある
-項以下には、小項目を追加することができます。
+項以下には、小項目を追加できます。
   24. こうすれば項の下の小項目です
   5. もちろん複数いけます
     1. そう、二段階いけます
@@ -78,9 +79,9 @@ const formatedText = format(<markdownText>, { standalone: false, elementId: 'cor
 ```
 
 - 補足情報
-  - `>`で文章がインデントされ、補足情報などとして出力出来ます。
+  - 住所や電話番号など補足情報として出力出来ます。
 - タイムスタンプ
-  - 以下の例のように書くことによって、タイムスタンプを出力出来ます。
+  - 以下の例のように書くことによって、ユーザーが指定したタイムスタンプを出力出来ます。
   ~~~markdown
    ``` Date　```
   ~~~
@@ -88,11 +89,10 @@ const formatedText = format(<markdownText>, { standalone: false, elementId: 'cor
 
 ~~~markdown
 ## ちょっとしたテクニック
-[リンク](https://github.com/CureApp/legal-doc-jp)、**強調**といったインライン表現は、
+[リンク](https://github.com/CureApp/legal-doc-format-jp)、**強調**といったインライン表現は、
 Markdownと同じようにつけることができます。
 
 住所や電話番号といった補足情報を入れることができます。
-
 > 補足情報です。
 > ちょっとインデントが加わるので、補足情報を書くのにいいです。
 
@@ -102,10 +102,20 @@ Markdownと同じようにつけることができます。
 ```
 ~~~
 
-
 # JavaScript API
 ```js
 const legalDocFormatJp = require('legal-doc-format-jp')
 const markdownText = require('fs').readFileSync('/path/to/somefile.md', 'utf8')
 const html = legalDocFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
 ```
+
+# Contibution
+1. Forkする
+2. あなたの考えていることをIssueに立てる
+3. あなたの考える機能を実装するブランチを作る
+4. 変更をコミットする
+5. あなたの実装したブランチをPushする
+6. Pull Requestを送る
+
+# LICENSE
+[Apache-2.0](./LICENSE)
