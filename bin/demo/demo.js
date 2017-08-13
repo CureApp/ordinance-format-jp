@@ -72,6 +72,7 @@ window.onload = function() {
   const cT = format(mT.value, { standalone: false, elementId: 'corp-site-pp' })
   document.getElementById("convertedText").innerHTML = cT
   mT.addEventListener("keydown", onChangeText)
+  mT.addEventListener("change", onChangeText)
 
   const sB = document.getElementById("showRowTextButton")
   sB.addEventListener("click", showRowText)

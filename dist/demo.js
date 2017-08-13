@@ -596,6 +596,7 @@ window.onload = function() {
   const cT = Object(__WEBPACK_IMPORTED_MODULE_0__src_index_js__["format"])(mT.value, { standalone: false, elementId: 'corp-site-pp' })
   document.getElementById("convertedText").innerHTML = cT
   mT.addEventListener("keydown", onChangeText)
+  mT.addEventListener("change", onChangeText)
 
   const sB = document.getElementById("showRowTextButton")
   sB.addEventListener("click", showRowText)
