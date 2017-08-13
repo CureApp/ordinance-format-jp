@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>legal-doc-format-jp/example</title>
+    <title>ordinance-format-jp/example</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../src/styles/style.css">
     <link rel="stylesheet" type="text/css" href="./styles/demo.css">
@@ -14,14 +14,14 @@
       <div class="nav">
         <a href="./index.html">
           <div class="nav-top nav-bar button">
-            <h1>legal-doc-format-jp</h1>
-            <p>Format for Japanese legal documents</p>
+            <h1>ordinance-format-jp</h1>
+            <p>Format for Japanese ordinance documents</p>
           </div>
         </a>
         <div class="nav-links nav-bar">
           <a class="nav-link" href="./index.html">Doc</a>
           <a class="nav-link" href="./example.html">Example</a>
-          <a class="nav-link" href="https://github.com/CureApp/legal-doc-format-jp">GitHub</a>
+          <a class="nav-link" href="https://github.com/CureApp/ordinance-format-jp">GitHub</a>
         </div>
       </div>
       <div class="clear"></div>
@@ -98,7 +98,7 @@
 ラベル名はなんでもいいですが、その項目の意味を完結に表したものがわかりやすく、望ましいです。
 
 ## ちょっとしたテクニック
-[リンク](https://github.com/CureApp/legal-doc-jp)、**強調**といったインライン表現は、
+[リンク](https://github.com/CureApp/ordinance-jp)、**強調**といったインライン表現は、
 Markdownと同じようにつけることができます。
 
 住所や電話番号といった補足情報を入れることができます。
@@ -119,14 +119,15 @@ Markdownと同じようにつけることができます。
               <i id="caret" class="fa fa-caret-square-o-left button" aria-hidden="true"></i>
               <span>Converted Text</span>
               <div class="converted-nav">
-                <div class="button showRowTextButton" id="showRowTextButton">
+                <div class="button showRowTextButton" id="showRowTextButton" title="change text style">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   <i class="fa fa-exchange" aria-hidden="true"></i>
                   <i class="fa fa-html5" aria-hidden="true"></i>
                 </div>
                 <div
                   id="row-style"
-                  class="button">
+                  class="button"
+                  title="change html style">
                   <input
                     type="radio"
                     id="row-style-button"
@@ -134,8 +135,8 @@ Markdownと同じようにつけることができます。
                     standalone
                   </input>
                 </div>
-                <div id="copy-button" class="button">
-                  <i class="fa fa-clipboard" aria-hidden="true" alt="copy converted Text!!"></i>
+                <div id="copy-button" class="button" title="copy">
+                  <i class="fa fa-clipboard" aria-hidden="true" alt="copy to clickboad"></i>
                   <textarea id="hidden-textarea" class="hidden-textarea"></textarea>
                 </div>
               </div>

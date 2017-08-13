@@ -1,5 +1,5 @@
 // @flow
-import legalDocFormatJp, { format } from '../../src/index'
+import ordinanceFormatJp, { format } from '../../src/index'
 import fs from 'fs'
 import Program from 'commander'
 import { version } from '../../package.json'

@@ -220,7 +220,7 @@ var Document = function () {
   _createClass(Document, [{
     key: 'toHtml',
     value: function toHtml(ds, options) {
-      var elementId = options.elementId || 'legal-doc-format-jp';
+      var elementId = options.elementId || 'ordinance-format-jp';
       var h1 = (0, _tag2.default)('h1', this.title, { class: 'documentTitle' });
 
       var description = (0, _tag2.default)('div', this.description, { class: 'documentDescription' });
@@ -230,7 +230,7 @@ var Document = function () {
       }).join('\n');
       var footer = this.renderTimestamps();
 
-      var htmlWithoutLabelLinks = (0, _tag2.default)('div', [h1, description, articles, footer].join('\n'), { id: elementId, class: 'legal-doc-format-jp' });
+      var htmlWithoutLabelLinks = (0, _tag2.default)('div', [h1, description, articles, footer].join('\n'), { id: elementId, class: 'ordinance-format-jp' });
 
       var html = this.resolveLabels(htmlWithoutLabelLinks, ds);
 
@@ -543,18 +543,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function format(markdownText, options) {
-  return new legalDocFormatJp(markdownText).toHtml(options);
+  return new ordinanceFormatJp(markdownText).toHtml(options);
 }
 
-var legalDocFormatJp = function () {
-  function legalDocFormatJp(markdownText) {
-    _classCallCheck(this, legalDocFormatJp);
+var ordinanceFormatJp = function () {
+  function ordinanceFormatJp(markdownText) {
+    _classCallCheck(this, ordinanceFormatJp);
 
     var title = markdownText;
     this.document = new _documentFactory2.default().createFromText(markdownText);
   }
 
-  _createClass(legalDocFormatJp, [{
+  _createClass(ordinanceFormatJp, [{
     key: 'toHtml',
     value: function toHtml(options) {
       var ds = new _documentStructure2.default(this.document);
@@ -568,10 +568,10 @@ var legalDocFormatJp = function () {
     }
   }]);
 
-  return legalDocFormatJp;
+  return ordinanceFormatJp;
 }();
 
-exports.default = legalDocFormatJp;
+exports.default = ordinanceFormatJp;
 
 /***/ }),
 /* 6 */
@@ -774,7 +774,7 @@ function escapeHtml(html) {
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = "div.legal-doc-format-jp {\n  max-width: 1200px;\n  line-height: 1.5em;\n  font-size: 14px;\n  margin: 6em auto;\n  color: #333337;\n  padding: 0 2em;\n}\n\ndiv.legal-doc-format-jp ol {\n  margin: 0;\n  padding: 0;\n}\n\ndiv.legal-doc-format-jp h1.documentTitle {\n  text-align: center;\n  font-size: 20px;\n  margin-bottom: 3em;\n}\n\ndiv.legal-doc-format-jp div.documentDescription {\n  margin-bottom: 3em;\n}\n\ndiv.legal-doc-format-jp div.article {\n  margin-bottom: 1.5em;\n  counter-increment: articleNum;\n}\n\ndiv.legal-doc-format-jp h2.articleTitle:before {\n  content: \"第\" counter(articleNum) \"条　\";\n}\n\ndiv.legal-doc-format-jp h2.articleTitle {\n  font-size: 1em;\n  font-weight: normal;\n  margin-bottom: auto;\n}\n\ndiv.legal-doc-format-jp .articleItems {\n  padding-left: 2.5em;\n}\n\n\ndiv.legal-doc-format-jp .item1>ol.subItems {\n  list-style-type: none;\n}\ndiv.legal-doc-format-jp .item1>ol.subItems>li{\n  counter-increment: parenNum;\n}\ndiv.legal-doc-format-jp .item1>ol.subItems>li:before{\n  content: \"(\" counter(parenNum) \")\";\n}\ndiv.legal-doc-format-jp div.item2 {\n  display: inline;\n  padding-left: 0.3em;\n}\ndiv.legal-doc-format-jp div.item2>div.statement {\n  display: inline;\n}\n\n\ndiv.legal-doc-format-jp .item2>ol.subItems {\n  padding-left: 3.1em;\n  list-style-type: katakana;\n  margin-bottom: -1.5em;\n}\n\n\ndiv.legal-doc-format-jp .item3>ol.subItems {\n  list-style-type: none;\n}\ndiv.legal-doc-format-jp .item3>ol.subItems>li{\n  counter-increment: parenKatakana;\n}\ndiv.legal-doc-format-jp .item3>ol.subItems>li:before{\n  content: \"(\" counter(parenKatakana, katakana) \")\";\n}\ndiv.legal-doc-format-jp div.item4 {\n  display: inline;\n  padding-left: 0.3em;\n}\ndiv.legal-doc-format-jp div.item4>div.statement {\n  display: inline;\n}\n\n\ndiv.legal-doc-format-jp ol.timestamps {\n  list-style-type: none;\n  margin-top: 3em;\n}\n\ndiv.legal-doc-format-jp div.appendix {\n  padding-top: 1.5em;\n}\n\ndiv.legal-doc-format-jp div.appendix>p {\n  padding: 0;\n"
+module.exports = "div.ordinance-format-jp {\n  max-width: 1200px;\n  line-height: 1.5em;\n  font-size: 14px;\n  margin: 6em auto;\n  color: #333337;\n  padding: 0 2em;\n}\n\ndiv.ordinance-format-jp ol {\n  margin: 0;\n  padding: 0;\n}\n\ndiv.ordinance-format-jp h1.documentTitle {\n  text-align: center;\n  font-size: 20px;\n  margin-bottom: 3em;\n}\n\ndiv.ordinance-format-jp div.documentDescription {\n  margin-bottom: 3em;\n}\n\ndiv.ordinance-format-jp div.article {\n  margin-bottom: 1.5em;\n  counter-increment: articleNum;\n}\n\ndiv.ordinance-format-jp h2.articleTitle:before {\n  content: \"第\" counter(articleNum) \"条　\";\n}\n\ndiv.ordinance-format-jp h2.articleTitle {\n  font-size: 1em;\n  font-weight: normal;\n  margin-bottom: auto;\n}\n\ndiv.ordinance-format-jp .articleItems {\n  padding-left: 2.5em;\n}\n\n\ndiv.ordinance-format-jp .item1>ol.subItems {\n  list-style-type: none;\n}\ndiv.ordinance-format-jp .item1>ol.subItems>li{\n  counter-increment: parenNum;\n}\ndiv.ordinance-format-jp .item1>ol.subItems>li:before{\n  content: \"(\" counter(parenNum) \")\";\n}\ndiv.ordinance-format-jp div.item2 {\n  display: inline;\n  padding-left: 0.3em;\n}\ndiv.ordinance-format-jp div.item2>div.statement {\n  display: inline;\n}\n\n\ndiv.ordinance-format-jp .item2>ol.subItems {\n  padding-left: 3.1em;\n  list-style-type: katakana;\n  margin-bottom: -1.5em;\n}\n\n\ndiv.ordinance-format-jp .item3>ol.subItems {\n  list-style-type: none;\n}\ndiv.ordinance-format-jp .item3>ol.subItems>li{\n  counter-increment: parenKatakana;\n}\ndiv.ordinance-format-jp .item3>ol.subItems>li:before{\n  content: \"(\" counter(parenKatakana, katakana) \")\";\n}\ndiv.ordinance-format-jp div.item4 {\n  display: inline;\n  padding-left: 0.3em;\n}\ndiv.ordinance-format-jp div.item4>div.statement {\n  display: inline;\n}\n\n\ndiv.ordinance-format-jp ol.timestamps {\n  list-style-type: none;\n  margin-top: 3em;\n}\n\ndiv.ordinance-format-jp div.appendix {\n  padding-top: 1.5em;\n}\n\ndiv.ordinance-format-jp div.appendix>p {\n  padding: 0;\n"
 
 /***/ }),
 /* 9 */
@@ -3252,7 +3252,7 @@ module.exports = require("path");
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"legal-doc-format-jp","version":"1.0.0","description":"generate legal doc HTML from markdown text","main":"dist/bundle.js","directories":{"test":"test"},"scripts":{"webpack":"webpack","test":"webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"},"author":["shinout","imoans","Shagamii"],"license":"Apache-2.0","dependencies":{"commander":"^2.11.0","marked":"^0.3.6"},"devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.1.1","babel-polyfill":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-es2016":"^6.24.1","babel-preset-es2017":"^6.24.1","babel-preset-latest":"^6.24.1","raw-loader":"^0.5.1","webpack":"^3.3.0"}}
+module.exports = {"name":"ordinance-format-jp","version":"1.0.0","description":"generate legal doc HTML from markdown text","main":"dist/bundle.js","directories":{"test":"test"},"scripts":{"webpack":"webpack","test":"webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"},"author":["shinout","imoans","Shagamii"],"license":"Apache-2.0","dependencies":{"commander":"^2.11.0","marked":"^0.3.6"},"devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.1.1","babel-polyfill":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-es2016":"^6.24.1","babel-preset-es2017":"^6.24.1","babel-preset-latest":"^6.24.1","raw-loader":"^0.5.1","webpack":"^3.3.0"}}
 
 /***/ })
 /******/ ]);

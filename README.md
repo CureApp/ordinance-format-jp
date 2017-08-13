@@ -2,24 +2,24 @@
 公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換します。
 
 # サンプル文書
-[デモページ](https://cureapp.github.io/legal-doc-format-jp)
+[デモページ](https://cureapp.github.io/ordinance-format-jp)
 
 ![サンプル](./demo/images/sample.png)
 
 # インストール
 ```sh
-npm install -g legal-doc-format-jp
+npm install -g ordinance-format-jp
 ```
 
 # 使い方
 ## 標準出力にHTMLを出力する場合
 ```sh
-legal-doc-format-jp <markdown file>
+ordinance-format-jp <markdown file>
 ```
 
 ## ブラウザで使用する場合
 ```
-import { format } from 'legalDocFormatJp'
+import { format } from 'ordinanceFormatJp'
 
 const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp-site-pp'})
 ```
@@ -89,7 +89,7 @@ const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp
 
 ~~~markdown
 ## ちょっとしたテクニック
-[リンク](https://github.com/CureApp/legal-doc-format-jp)、**強調**といったインライン表現は、
+[リンク](https://github.com/CureApp/ordinance-format-jp)、**強調**といったインライン表現は、
 Markdownと同じようにつけることができます。
 
 住所や電話番号といった補足情報を入れることができます。
@@ -104,9 +104,9 @@ Markdownと同じようにつけることができます。
 
 # JavaScript API
 ```js
-const legalDocFormatJp = require('legal-doc-format-jp')
+const ordinanceFormatJp = require('ordinance-format-jp')
 const markdownText = require('fs').readFileSync('/path/to/somefile.md', 'utf8')
-const html = legalDocFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
+const html = ordinanceFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
 ```
 
 # Contibution

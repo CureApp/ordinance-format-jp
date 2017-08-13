@@ -1,5 +1,5 @@
 {
-  "name": "legal-doc-format-jp",
+  "name": "ordinance-format-jp",
   "version": "1.0.0",
   "description": "generate legal doc HTML from markdown text",
   "main": "dist/bundle.js",

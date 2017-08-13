@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>legal-doc-format-jp</title>
+    <title>ordinance-format-jp</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../src/styles/style.css">
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
@@ -15,14 +15,14 @@
       <div class="nav">
         <a href="./index.html">
           <div class="nav-top nav-bar button">
-            <h1>legal-doc-format-jp</h1>
-            <p>Format for Japanese legal documents</p>
+            <h1>ordinance-format-jp</h1>
+            <p>Format for Japanese ordinance documents</p>
           </div>
         </a>
         <div class="nav-links nav-bar">
           <a class="nav-link" href="./index.html">Doc</a>
           <a class="nav-link" href="./example.html">Example</a>
-          <a class="nav-link" href="https://github.com/CureApp/legal-doc-format-jp">GitHub</a>
+          <a class="nav-link" href="https://github.com/CureApp/ordinance-format-jp">GitHub</a>
         </div>
       </div>
       <div class="clear"></div>
@@ -35,12 +35,12 @@
         <img src="./assets/sample.png" alt="サンプル" />
         </div>
         <h1 id="インストール">インストール</h1>
-        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">npm</span> install -g legal-doc-format-jp</code></pre></div>
+        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">npm</span> install -g ordinance-format-jp</code></pre></div>
         <h1 id="使い方">使い方</h1>
         <h2 id="標準出力にhtmlを出力する場合">標準出力にHTMLを出力する場合</h2>
-        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">legal-doc-format-jp</span> <span class="op">&lt;</span>markdown file<span class="op">&gt;</span></code></pre></div>
+        <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">ordinance-format-jp</span> <span class="op">&lt;</span>markdown file<span class="op">&gt;</span></code></pre></div>
         <h2 id="ブラウザで使用する場合">ブラウザで使用する場合</h2>
-        <pre><code>import { format } from &#39;legalDocFormatJp&#39;
+        <pre><code>import { format } from &#39;ordinanceFormatJp&#39;
 
         const formatedText = format(&lt;markdownText&gt;, { standalone: true, elementId: &#39;corp-site-pp&#39;})</code></pre>
         <p>'formatedText'に、整形され、さらにstyleの当てられているHTMLが出力されます。</p>
@@ -110,7 +110,7 @@
         <li>他のリンクや強調、インライン表現などはMarkdownと同じように利用出来ます。</li>
         </ul>
         <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">## ちょっとしたテクニック</span>
-        <span class="ot">[リンク](https://github.com/CureApp/legal-doc-format-jp)</span>、**強調**といったインライン表現は、
+        <span class="ot">[リンク](https://github.com/CureApp/ordinance-format-jp)</span>、**強調**といったインライン表現は、
         Markdownと同じようにつけることができます。
 
         住所や電話番号といった補足情報を入れることができます。
@@ -123,9 +123,9 @@
         ```</code></pre></div>
         <h1 id="javascript-api">JavaScript API</h1>
         <div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript">
-        <span class="kw">const</span> legalDocFormatJp <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;legal-doc-format-jp&#39;</span>)
+        <span class="kw">const</span> ordinanceFormatJp <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;ordinance-format-jp&#39;</span>)
         <span class="kw">const</span> markdownText <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>).<span class="at">readFileSync</span>(<span class="st">&#39;/path/to/somefile.md&#39;</span><span class="op">,</span> <span class="st">&#39;utf8&#39;</span>)
-        <span class="kw">const</span> html <span class="op">=</span> <span class="at">legalDocFormatJp</span>(markdownText<span class="op">,</span> <span class="op">{</span> <span class="dt">standalone</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">elementId</span><span class="op">:</span> <span class="st">&#39;foo-bar&#39;</span> <span class="op">}</span>) <span class="co">// rendered html</span>
+        <span class="kw">const</span> html <span class="op">=</span> <span class="at">ordinanceFormatJp</span>(markdownText<span class="op">,</span> <span class="op">{</span> <span class="dt">standalone</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">elementId</span><span class="op">:</span> <span class="st">&#39;foo-bar&#39;</span> <span class="op">}</span>) <span class="co">// rendered html</span>
         </code></pre></div>
         <h1 id="contibution">Contibution</h1>
         <ol style="list-style-type: decimal">
