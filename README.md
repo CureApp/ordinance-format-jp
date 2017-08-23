@@ -18,8 +18,8 @@ ordinance-format-jp <markdown file>
 ```
 
 ## ブラウザで使用する場合
-```
-import { format } from 'ordinanceFormatJp'
+```js
+import { format } from 'ordinance-format-jp'
 
 const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp-site-pp'})
 ```
