@@ -83,7 +83,7 @@ export default class DocumentFactory {
             currentItem.statement = text
             currentItem.labelName = labelName
           } else {
-            console.warn(`"${text}" の前に改行を開けてください`);
+            console.warn(`"${text}" の前に改行を開けてください`)
           }
           beforeId = id
           break

@@ -634,6 +634,7 @@ var DocumentFactory = function () {
 
       var doc = new _document2.default();
       var id = 1;
+      var beforeId = void 0;
       var currentArticle = void 0;
       var itemStack = [];
       var inBlockquote = false;
@@ -703,8 +704,13 @@ var DocumentFactory = function () {
                   _labelName3 = _parseInline3.labelName,
                   _text2 = _parseInline3.text;
 
-              currentItem.statement = _text2;
-              currentItem.labelName = _labelName3;
+              if (beforeId !== id) {
+                currentItem.statement = _text2;
+                currentItem.labelName = _labelName3;
+              } else {
+                console.warn('"' + _text2 + '" \u306E\u524D\u306B\u6539\u884C\u3092\u958B\u3051\u3066\u304F\u3060\u3055\u3044');
+              }
+              beforeId = id;
               break;
             }
           case 'code':
