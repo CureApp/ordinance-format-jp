@@ -23,6 +23,7 @@ export default class DocumentFactory {
 
     const doc = new Document()
     let id = 1
+    let beforeId
     let currentArticle: ?Article
     let itemStack: Array<Item> = []
     let inBlockquote = false
@@ -78,8 +79,13 @@ export default class DocumentFactory {
 
         case 'text': {
           const { labelName, text } = this.parseInline(token.text)
-          currentItem.statement = text
-          currentItem.labelName = labelName
+          if (beforeId !== id) {
+            currentItem.statement = text
+            currentItem.labelName = labelName
+          } else {
+            console.warn(`"${text}" の前に改行を開けてください`);
+          }
+          beforeId = id
           break
         }
         case 'code': {
