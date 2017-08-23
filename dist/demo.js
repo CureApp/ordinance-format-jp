@@ -516,101 +516,99 @@ exports.default = Item;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_index_js__);
 
+
+var _index = __webpack_require__(6);
 
 function transMD(rowStyle) {
-  const markdownText = document.getElementById("markdownText").value
-  const html = Object(__WEBPACK_IMPORTED_MODULE_0__src_index_js__["format"])(markdownText, { standalone: rowStyle, elementId: 'corp-site-pp'})
-  return html
+  var markdownText = document.getElementById("markdownText").value;
+  var html = (0, _index.format)(markdownText, { standalone: rowStyle, elementId: 'corp-site-pp' });
+  return html;
 }
+
 
 function toggleForm(mdWidth, mdHeight, htmlSize) {
-  document.getElementById('markdownTextArea').style.width = mdWidth
-  document.getElementById('markdownTextArea').style.height = mdHeight
-  document.getElementById('convertedTextArea').style.width = htmlSize
+  document.getElementById('markdownTextArea').style.width = mdWidth;
+  document.getElementById('markdownTextArea').style.height = mdHeight;
+  document.getElementById('convertedTextArea').style.width = htmlSize;
 }
 
-let caretLeft = true
+var caretLeft = true;
 function onClickCaret() {
-  const caret = document.getElementById("caret")
+  var caret = document.getElementById("caret");
   if (caretLeft) {
-    caret.className = 'fa fa-caret-square-o-right'
-    toggleForm('0', '0', '100%')
-    document.getElementById('markdownTextArea').style.display = 'block'
+    caret.className = 'fa fa-caret-square-o-right';
+    toggleForm('0', '0', '100%');
+    document.getElementById('markdownTextArea').style.display = 'block';
   } else {
-    caret.className = 'fa fa-caret-square-o-left'
-    toggleForm('48%', '98vh', '50%')
-    document.getElementById('markdownTextArea').style.display = 'inline-block'
+    caret.className = 'fa fa-caret-square-o-left';
+    toggleForm('48%', '98vh', '50%');
+    document.getElementById('markdownTextArea').style.display = 'inline-block';
   }
-  caretLeft = !caretLeft
+  caretLeft = !caretLeft;
 }
 
-let showedRowText = false
+var showedRowText = false;
 function onChangeText(rowStyle) {
   console.log('hog');
-  const html = transMD(rowStyle)
+  var html = transMD(rowStyle);
   if (showedRowText) {
-    document.getElementById("convertedText").textContent = html
+    document.getElementById("convertedText").textContent = html;
   } else {
-    document.getElementById("convertedText").innerHTML = html
+    document.getElementById("convertedText").innerHTML = html;
   }
 }
 
-let htmlStyle
+var htmlStyle = void 0;
 function onClickStandAlone() {
-  htmlStyle = !htmlStyle
-  document.getElementById("row-style-button").checked = htmlStyle
-  onChangeText(htmlStyle)
+  htmlStyle = !htmlStyle;
+  document.getElementById("row-style-button").checked = htmlStyle;
+  onChangeText(htmlStyle);
 }
 
 function showRowText() {
   if (showedRowText) {
-    const convertedText = document.getElementById('convertedText').textContent
-    document.getElementById('convertedText').textContent = ''
-    document.getElementById('convertedText').innerHTML = convertedText
+    var convertedText = document.getElementById('convertedText').textContent;
+    document.getElementById('convertedText').textContent = '';
+    document.getElementById('convertedText').innerHTML = convertedText;
   } else {
-    const convertedText = document.getElementById('convertedText').innerHTML
-    document.getElementById('convertedText').innerHTML = ''
-    document.getElementById('convertedText').textContent = convertedText
+    var _convertedText = document.getElementById('convertedText').innerHTML;
+    document.getElementById('convertedText').innerHTML = '';
+    document.getElementById('convertedText').textContent = _convertedText;
   }
-  showedRowText = !showedRowText
+  showedRowText = !showedRowText;
 }
 
 function copyConvetedHtml() {
-  const html = transMD(htmlStyle)
-  document.getElementById('hidden-textarea').value = html
-  document.getElementById('hidden-textarea').select()
+  var html = transMD(htmlStyle);
+  document.getElementById('hidden-textarea').value = html;
+  document.getElementById('hidden-textarea').select();
   document.execCommand("copy");
-  document.getElementById('hidden-textarea').blur()
+  document.getElementById('hidden-textarea').blur();
 }
 
+window.onload = function () {
+  var mT = document.getElementById("markdownText");
+  var cT = (0, _index.format)(mT.value, { standalone: false, elementId: 'corp-site-pp' });
+  document.getElementById("convertedText").innerHTML = cT;
+  mT.addEventListener("keydown", onChangeText);
+  mT.addEventListener("change", onChangeText);
 
-window.onload = function() {
-  const mT = document.getElementById("markdownText")
-  const cT = Object(__WEBPACK_IMPORTED_MODULE_0__src_index_js__["format"])(mT.value, { standalone: false, elementId: 'corp-site-pp' })
-  document.getElementById("convertedText").innerHTML = cT
-  mT.addEventListener("keydown", onChangeText)
-  mT.addEventListener("change", onChangeText)
+  var sB = document.getElementById("showRowTextButton");
+  sB.addEventListener("click", showRowText);
 
-  const sB = document.getElementById("showRowTextButton")
-  sB.addEventListener("click", showRowText)
+  var cR = document.getElementById("caret");
+  cR.addEventListener("click", onClickCaret);
 
-  const cR = document.getElementById("caret")
-  cR.addEventListener("click", onClickCaret)
+  var rS = document.getElementById("row-style");
+  rS.addEventListener("click", onClickStandAlone);
 
-  const rS = document.getElementById("row-style")
-  rS.addEventListener("click", onClickStandAlone)
-
-  const cB = document.getElementById('copy-button')
-  cB.addEventListener("click", copyConvetedHtml)
-}
-
+  var cB = document.getElementById('copy-button');
+  cB.addEventListener("click", copyConvetedHtml);
+};
 
 /***/ }),
 /* 6 */

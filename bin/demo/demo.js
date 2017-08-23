@@ -1,12 +1,13 @@
+// @flow
 import { format } from '../../src/index.js'
 
-function transMD(rowStyle) {
+function transMD(rowStyle: boolean): string {
   const markdownText = document.getElementById("markdownText").value
   const html = format(markdownText, { standalone: rowStyle, elementId: 'corp-site-pp'})
   return html
 }
 
-function toggleForm(mdWidth, mdHeight, htmlSize) {
+function toggleForm(mdWidth: string, mdHeight: string, htmlSize: string) {
   document.getElementById('markdownTextArea').style.width = mdWidth
   document.getElementById('markdownTextArea').style.height = mdHeight
   document.getElementById('convertedTextArea').style.width = htmlSize

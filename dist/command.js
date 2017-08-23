@@ -3252,7 +3252,7 @@ module.exports = require("path");
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"ordinance-format-jp","version":"1.0.0","description":"generate legal doc HTML from markdown text","main":"dist/bundle.js","directories":{"test":"test"},"scripts":{"webpack":"webpack","test":"webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"},"author":["shinout","imoans","Shagamii"],"license":"Apache-2.0","dependencies":{"commander":"^2.11.0","marked":"^0.3.6"},"devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.1.1","babel-polyfill":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-es2016":"^6.24.1","babel-preset-es2017":"^6.24.1","babel-preset-latest":"^6.24.1","raw-loader":"^0.5.1","webpack":"^3.3.0"}}
+module.exports = {"name":"ordinance-format-jp","version":"1.0.0","description":"generate legal doc HTML from markdown text","main":"dist/bundle.js","directories":{"test":"test"},"scripts":{"webpack":"webpack","test":"webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"},"author":["shinout","imoans","Shagamii"],"license":"Apache-2.0","dependencies":{"commander":"^2.11.0","marked":"^0.3.6"},"devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.1.1","babel-polyfill":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-es2016":"^6.24.1","babel-preset-es2017":"^6.24.1","babel-preset-flow":"^6.23.0","babel-preset-latest":"^6.24.1","raw-loader":"^0.5.1","webpack":"^3.3.0"}}
 
 /***/ })
 /******/ ]);

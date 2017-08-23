@@ -51,6 +51,7 @@ const webConfig = {
         use: ['babel-loader'],
         include: [
           path.join(__dirname, 'src'),
+          path.join(__dirname, 'bin'),
           path.resolve(__dirname, "node_modules"),
         ],
       },
