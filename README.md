@@ -4,7 +4,7 @@
 # サンプル文書
 [デモページ](https://cureapp.github.io/ordinance-format-jp)
 
-![サンプル](./demo/images/sample.png)
+![サンプル](./demo/assets/sample.png)
 
 # インストール
 ```sh
@@ -44,6 +44,7 @@ const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp
   - 複数存在する場合は、各項の先頭に ```数字.``` と記述すると上から順に項番がふられます。
   - １行改行した場合も番号がふられ出力されます。
   - ```-```では出力されず、数字でのリスト構造のみ出力可能です。
+  - 数字でのリスト構造を用いる場合は改行をしないでください
   - 入れ子にすることにより、より項の中に項が入れ子に出力出来ます。
 
 ```md
