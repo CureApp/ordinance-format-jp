@@ -18,7 +18,7 @@ describe('ordinanceFormatJp', function() {
 
     it('can fomat markdown to HTML', function() {
       const formatedHTML = format(this.mdData, { standalone: false, elementId: 'corp-site-pp' })
-      assert.deepEqual(formatedHTML, this.htmlData)
+      assert(formatedHTML === this.htmlData)
     })
   })
 })
