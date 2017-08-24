@@ -44,6 +44,18 @@ export default class Document {
   }
 
   toHtml(ds: DocumentStructure, options: HtmlOptions): string {
+    const optName =  ['standalone', 'elementId']
+    Object.keys(options).forEach(name => {
+      if (! optName.includes(name)) {
+        throw new Error(`Unknown option: "${name}"`)
+      }
+
+      if ( typeof options[name] === 'object' ) {
+        throw new Error(`type of ${name} option is 'object'. You should not be 'object'`)
+      }
+    })
+
+    const standalone = options.standalone || true
     const elementId = options.elementId || 'ordinance-format-jp'
     const h1 = tag(
       'h1',
@@ -68,7 +80,7 @@ export default class Document {
 
     const html = this.resolveLabels(htmlWithoutLabelLinks, ds)
 
-    if (!options.standalone) {
+    if (!standalone) {
       return html
     }
     // $FlowIssue(css-is-string)
