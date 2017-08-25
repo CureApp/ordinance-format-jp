@@ -3,3 +3,4 @@ package-lock.json
 bin/markdowns
 npm-debug.log
 dist
+.nyc_output
