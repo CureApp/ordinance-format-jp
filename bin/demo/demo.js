@@ -30,7 +30,7 @@ function onClickCaret() {
 
 let showedRowText = false
 function onChangeText(rowStyle) {
-  console.log('hog');
+  if ( typeof rowStyle === 'object' ) rowStyle = htmlStyle
   const html = transMD(rowStyle)
   if (showedRowText) {
     document.getElementById("convertedText").textContent = html
