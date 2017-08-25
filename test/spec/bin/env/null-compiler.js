@@ -1,3 +1,1 @@
-function noop() { return null }
-
-require.extensions['.css'] = noop
+import 'css-modules-require-hook/preset'
