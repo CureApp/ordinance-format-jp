@@ -8,7 +8,9 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "test": "webpack bin/spec/index.js --target node --output-filename test.js > /dev/null && node dist/test.js"
+    "test": "npm run test:coverage",
+    "test:spec": "mocha $(find test/spec -type f ! -path '*/data/*')",
+    "test:coverage": "nyc --reporter=lcov --reporter=text _mocha $(find test/spec -type f ! -path '*/data/*')"
   },
   "author": [
     "shinout",
@@ -18,6 +20,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "commander": "^2.11.0",
+    "css-modules-require-hook": "^4.0.6",
+    "istanbul": "^0.4.5",
     "marked": "^0.3.6"
   },
   "devDependencies": {
@@ -30,6 +34,8 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
+    "mocha": "^3.5.0",
+    "power-assert": "^1.4.4",
     "raw-loader": "^0.5.1",
     "webpack": "^3.3.0"
   }
