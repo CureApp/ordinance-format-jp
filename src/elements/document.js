@@ -55,7 +55,6 @@ export default class Document {
       }
     })
 
-    const standalone = options.standalone || true
     const elementId = options.elementId || 'ordinance-format-jp'
     const h1 = tag(
       'h1',
@@ -80,7 +79,7 @@ export default class Document {
 
     const html = this.resolveLabels(htmlWithoutLabelLinks, ds)
 
-    if (!standalone) {
+    if (!options.standalone) {
       return html
     }
     // $FlowIssue(css-is-string)
