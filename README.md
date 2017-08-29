@@ -21,9 +21,16 @@ ordinance-format-jp <markdown file>
 ```js
 import { format } from 'ordinance-format-jp'
 
-const formatedText = format(<markdownText>, { standalone: true, elementId: 'corp-site-pp'})
+const formatedText = format(<markdownText to format>, { standalone: true, elementId: 'corp-site-pp'})
 ```
 'formatedText'に、整形され、さらにstyleの当てられているHTMLが出力されます。
+
+## JavaScript API
+```js
+const ordinanceFormatJp = require('ordinance-format-jp')
+const markdownText = require('fs').readFileSync('/path/to/somefile.md', 'utf8')
+const html = ordinanceFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
+```
 
 # オプション
 - `--nostyle`: styleタグをつけず、HTML構造のみ出力します。
@@ -102,13 +109,6 @@ Markdownと同じようにつけることができます。
 変更日: 2017年7月23日
 ```
 ~~~
-
-# JavaScript API
-```js
-const ordinanceFormatJp = require('ordinance-format-jp')
-const markdownText = require('fs').readFileSync('/path/to/somefile.md', 'utf8')
-const html = ordinanceFormatJp(markdownText, { standalone: true, elementId: 'foo-bar' }) // rendered html
-```
 
 # Contibution
 1. Forkする
