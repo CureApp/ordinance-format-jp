@@ -5,7 +5,7 @@ const nodeConfig = {
   target: 'node',
   entry: {
       bundle: './src/index.js',
-      command: './bin/spec/index.js'
+      command: './bin/cli.js'
   },
   output: {
   filename: '[name].js',
@@ -38,7 +38,7 @@ const nodeConfig = {
 
 const webConfig = {
   target: 'web',
-  entry: './bin/demo/demo.js',
+  entry: './demo/js/demo.js',
   output: {
     filename: 'demo.js',
     path: path.resolve(__dirname, 'dist')
@@ -51,7 +51,7 @@ const webConfig = {
         use: ['babel-loader'],
         include: [
           path.join(__dirname, 'src'),
-          path.join(__dirname, 'bin'),
+          path.join(__dirname, 'demo'),
           path.resolve(__dirname, "node_modules"),
         ],
       },

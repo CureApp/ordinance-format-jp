@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "generate legal doc HTML from markdown text",
   "main": "dist/bundle.js",
+  "bin": "dist/command.js",
   "directories": {
     "test": "test"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "webpack": "webpack",
     "test": "npm run test:coverage",
-    "test:spec": "mocha $(find test/spec -type f ! -path '*/data/*')",
+    "test:spec": "mocha --recursive",
     "test:coverage": "nyc --reporter=lcov --reporter=text _mocha $(find test/spec -type f ! -path '*/data/*')"
   },
   "author": [
