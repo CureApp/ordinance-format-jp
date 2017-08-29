@@ -1,6 +1,6 @@
 node_modules
 package-lock.json
-bin/markdowns
+bin
 npm-debug.log
 dist
 .nyc_output
