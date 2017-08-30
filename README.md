@@ -2,7 +2,7 @@
 公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換します。
 
 # サンプル文書
-[デモページ](https://cureapp.github.io/ordinance-format-jp)
+[デモページ](https://cureapp.github.io/ordinance-format-jp/example.html)
 
 ![サンプル](./demo/assets/sample.png)
 
