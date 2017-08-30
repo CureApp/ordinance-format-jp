@@ -110,7 +110,7 @@ Markdownと同じようにつけることができます。
 ```
 ~~~
 
-# Contibution
+# Contribution
 1. Forkする
 2. あなたの考えていることをIssueに立てる
 3. あなたの考える機能を実装するブランチを作る
