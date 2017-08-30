@@ -2,7 +2,7 @@
 公文書や規則用の目的で記載したMarkdown形式のテキストを、公文書のスタイルの整ったHTMLに変換します。
 
 # サンプル文書
-[デモページ](https://cureapp.github.io/ordinance-format-jp)
+[デモページ](https://cureapp.github.io/ordinance-format-jp/example.html)
 
 ![サンプル](./demo/assets/sample.png)
 
@@ -119,4 +119,4 @@ Markdownと同じようにつけることができます。
 6. Pull Requestを送る
 
 # LICENSE
-[Apache-2.0](./LICENSE)
+[Apache-2.0](https://github.com/CureApp/ordinance-format-jp/blob/master/LICENSE)
