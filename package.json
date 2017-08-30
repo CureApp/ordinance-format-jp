@@ -1,6 +1,6 @@
 {
   "name": "ordinance-format-jp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "generate legal doc HTML from markdown text",
   "main": "dist/main/index.js",
   "bin": "dist/command.js",
