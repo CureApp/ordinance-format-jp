@@ -9,7 +9,7 @@
   },
   "files": [
     "dist",
-     "package.json"
+    "package.json"
   ],
   "scripts": {
     "webpack": "webpack",
@@ -39,6 +39,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-flow": "^6.23.0",
     "mocha": "^3.5.0",
+    "node-circleci-autorelease": "^2.2.4",
     "nyc": "^11.1.0",
     "power-assert": "^1.4.4",
     "raw-loader": "^0.5.1",

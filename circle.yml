@@ -1,0 +1,27 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+      - /release.*/
+machine:
+  environment:
+    PATH: './node_modules/.bin:$PATH'
+  pre:
+    - git config --global user.name "CircleCI"
+    - git config --global user.email "circleci@example.com"
+dependencies:
+  post:
+    - nca run echo "before update-modules"
+    - nca run nca notice update-modules
+    - nca run echo "after update-modules"
+deployment:
+  create_release_branch:
+    branch:
+      - master
+    commands:
+      - nca run echo "before release"
+      - nca release --prefix v
+      - nca run echo "after release"
+      - nca run echo "before gh-pages"
+      - nca run nca notice gh-pages
+      - nca run echo "after gh-pages"
