@@ -9,7 +9,7 @@ import { resolve } from 'path'
 describe('ordinanceFormatJp', function() {
 
   before(function() {
-    this.samplePath = resolve(__dirname + '/../../../bin/markdowns/sample.md')
+    this.samplePath = resolve(__dirname + '/../data/sample.md')
     this.markdownText = fs.readFileSync(this.samplePath, 'utf8')
     this.document = new DocumentFactory().createFromText(this.markdownText)
     this.oF = new ordinanceFormatJp(this.markdownText)
@@ -56,7 +56,7 @@ describe('ordinanceFormatJp', function() {
   describe('toPlainText', function() {
 
     before(function() {
-      this.samplePath = resolve(__dirname + '/../../../bin/markdowns/sample.md')
+      this.samplePath = resolve(__dirname + '/../data/sample.md')
       this.markdownText = fs.readFileSync(this.samplePath, 'utf8')
       this.oF = new ordinanceFormatJp(this.markdownText)
     })

@@ -9,7 +9,7 @@
   },
   "files": [
     "dist",
-     "package.json"
+    "package.json"
   ],
   "scripts": {
     "webpack": "webpack",

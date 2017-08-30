@@ -8,7 +8,7 @@ import { resolve } from 'path'
 describe('DocumentStructure', function() {
 
   before(function() {
-    this.samplePath = resolve(__dirname + '/../../../bin/markdowns/sample.md')
+    this.samplePath = resolve(__dirname + '/../data/sample.md')
     this.markdownText = fs.readFileSync(this.samplePath, 'utf8')
     this.document = new DocumentFactory().createFromText(this.markdownText)
   })
