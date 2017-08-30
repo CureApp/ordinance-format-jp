@@ -1,5 +1,5 @@
 // @flow
-import { format } from '../../src/index.js'
+import { format } from '../../src/index'
 
 function transMD(rowStyle: boolean): string {
   const markdownText = document.getElementById("markdownText").value

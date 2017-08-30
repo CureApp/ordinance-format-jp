@@ -2,19 +2,21 @@
   "name": "ordinance-format-jp",
   "version": "1.0.0",
   "description": "generate legal doc HTML from markdown text",
-  "main": "dist/bundle.js",
+  "main": "dist/main/index.js",
   "bin": "dist/command.js",
   "directories": {
     "test": "test"
   },
   "files": [
-    "dist"
+    "dist",
+     "package.json"
   ],
   "scripts": {
     "webpack": "webpack",
     "test": "npm run test:coverage",
     "test:spec": "mocha --recursive",
-    "test:coverage": "nyc --reporter=lcov --reporter=text _mocha $(find test/spec -type f ! -path '*/data/*')"
+    "test:coverage": "nyc --reporter=lcov --reporter=text _mocha --recursive",
+    "build": "webpack && $(npm bin)/babel src -d dist/main"
   },
   "author": [
     "shinout",
@@ -23,21 +25,19 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
+    "babel-plugin-transform-css-import-to-string": "~0.0.2",
+    "babel-preset-env": "^1.6.0",
     "commander": "^2.11.0",
     "css-modules-require-hook": "^4.0.6",
     "istanbul": "^0.4.5",
     "marked": "^0.3.6"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
     "mocha": "^3.5.0",
     "nyc": "^11.1.0",
     "power-assert": "^1.4.4",

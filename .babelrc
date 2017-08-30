@@ -1,3 +1,4 @@
 {
-  "presets": ["latest", "flow"]
+  "presets": ["env", "flow"],
+  "plugins": ["babel-plugin-transform-css-import-to-string"]
 }

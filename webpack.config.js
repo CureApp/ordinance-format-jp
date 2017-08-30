@@ -3,13 +3,10 @@ const webpack = require('webpack');
 
 const nodeConfig = {
   target: 'node',
-  entry: {
-      bundle: './src/index.js',
-      command: './bin/cli.js'
-  },
+  entry: './bin/cli.js',
   output: {
-  filename: '[name].js',
-  path: path.resolve(__dirname, 'dist')
+    filename: 'command.js',
+    path: path.resolve(__dirname, 'dist')
   },
   node: {
     __dirname: true,
